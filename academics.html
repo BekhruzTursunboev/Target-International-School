@@ -1,0 +1,1544 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-translate="academics.page-title">
+      Academics - Target International School
+    </title>
+    <meta
+      name="description"
+      content="Explore the academic programs at Target International School in Tashkent, Uzbekistan - IT Education, Business Studies, and more."
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <style>
+      /* Page-specific styles */
+      .program-section {
+        position: relative;
+        padding: 6rem 0;
+        overflow: hidden;
+      }
+
+      .program-section:nth-child(odd) {
+        background-color: var(--secondary-color);
+      }
+
+      .program-shape {
+        position: absolute;
+        z-index: 0;
+      }
+
+      .shape-1 {
+        top: -50px;
+        right: -50px;
+        width: 200px;
+        height: 200px;
+        background-color: var(--accent-color);
+        opacity: 0.1;
+        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+        animation: morphShape 15s ease-in-out infinite;
+      }
+
+      .shape-2 {
+        bottom: -50px;
+        left: -50px;
+        width: 250px;
+        height: 250px;
+        background-color: var(--primary-color);
+        opacity: 0.1;
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        animation: morphShape 20s ease-in-out infinite alternate;
+      }
+
+      @keyframes morphShape {
+        0% {
+          border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+        }
+        25% {
+          border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%;
+        }
+        50% {
+          border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%;
+        }
+        75% {
+          border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%;
+        }
+        100% {
+          border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+        }
+      }
+
+      .program-icon-large {
+        font-size: 8rem;
+        color: var(--primary-color);
+        opacity: 0.1;
+        position: absolute;
+        right: 10%;
+        top: 10%;
+        transform: rotate(15deg);
+        z-index: 0;
+      }
+
+      .program-content {
+        position: relative;
+        z-index: 1;
+      }
+
+      .feature-card {
+        background-color: white;
+        border-radius: 15px;
+        padding: 1.5rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        height: 100%;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      .feature-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 5px;
+        height: 100%;
+        background-color: var(--accent-color);
+        transition: width 0.3s ease;
+      }
+
+      .feature-card:hover::before {
+        width: 100%;
+        opacity: 0.1;
+      }
+
+      .feature-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: var(--primary-color);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        transition: all 0.3s ease;
+      }
+
+      .feature-card:hover .feature-icon {
+        background-color: var(--accent-color);
+        transform: rotateY(180deg);
+      }
+
+      .curriculum-tabs .nav-link {
+        border: none;
+        border-radius: 0;
+        padding: 1rem 1.5rem;
+        font-weight: 600;
+        color: var(--text-color);
+        position: relative;
+        transition: all 0.3s ease;
+      }
+
+      .curriculum-tabs .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 3px;
+        background-color: var(--accent-color);
+        transition: width 0.3s ease;
+      }
+
+      .curriculum-tabs .nav-link.active {
+        color: var(--accent-color);
+        background-color: transparent;
+      }
+
+      .curriculum-tabs .nav-link.active::after {
+        width: 100%;
+      }
+
+      .curriculum-tabs .nav-link:hover::after {
+        width: 100%;
+      }
+
+      .subject-list {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .subject-list li {
+        padding: 0.75rem 0;
+        border-bottom: 1px solid var(--border-color);
+        display: flex;
+        align-items: center;
+      }
+
+      .subject-list li:last-child {
+        border-bottom: none;
+      }
+
+      .subject-list li i {
+        color: var(--accent-color);
+        margin-right: 0.75rem;
+      }
+
+      .stats-card {
+        background-color: var(--primary-color);
+        color: white;
+        border-radius: 15px;
+        padding: 2rem;
+        text-align: center;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+      }
+
+      .stats-card::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.1) 0%,
+          rgba(255, 255, 255, 0) 70%
+        );
+        z-index: -1;
+      }
+
+      .stats-number {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        background: linear-gradient(45deg, #ffffff, #f0f0f0);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .stats-label {
+        font-size: 1.1rem;
+        opacity: 0.9;
+      }
+
+      .faculty-card {
+        position: relative;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        margin-bottom: 30px;
+      }
+
+      .faculty-image {
+        height: 300px;
+        position: relative;
+      }
+
+      .faculty-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .faculty-card:hover .faculty-image img {
+        transform: scale(1.1);
+      }
+
+      .faculty-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 1.5rem;
+        background: linear-gradient(to top, rgba(0, 45, 98, 0.9), transparent);
+        color: white;
+        transform: translateY(70%);
+        transition: transform 0.5s ease;
+      }
+
+      .faculty-card:hover .faculty-overlay {
+        transform: translateY(0);
+      }
+
+      .faculty-name {
+        margin-bottom: 0.5rem;
+      }
+
+      .faculty-position {
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 1rem;
+      }
+
+      .faculty-bio {
+        margin-bottom: 1rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .faculty-social {
+        display: flex;
+        gap: 0.5rem;
+      }
+
+      .faculty-social a {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.2);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+      }
+
+      .faculty-social a:hover {
+        background-color: var(--accent-color);
+        transform: translateY(-3px);
+      }
+
+      .testimonial-card {
+        background-color: white;
+        border-radius: 15px;
+        padding: 2rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        position: relative;
+        margin-top: 40px;
+        margin-bottom: 30px;
+      }
+
+      .testimonial-image {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        overflow: hidden;
+        position: absolute;
+        top: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+        border: 5px solid white;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .testimonial-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .testimonial-content {
+        text-align: center;
+        padding-top: 2.5rem;
+      }
+
+      .testimonial-text {
+        font-style: italic;
+        margin-bottom: 1rem;
+        position: relative;
+      }
+
+      .testimonial-text::before,
+      .testimonial-text::after {
+        content: '"';
+        font-size: 2rem;
+        color: var(--accent-color);
+        position: absolute;
+        opacity: 0.3;
+      }
+
+      .testimonial-text::before {
+        top: -10px;
+        left: -10px;
+      }
+
+      .testimonial-text::after {
+        bottom: -30px;
+        right: -10px;
+      }
+
+      .testimonial-author {
+        font-weight: 600;
+        color: var(--primary-color);
+      }
+
+      .testimonial-position {
+        font-size: 0.9rem;
+        color: var(--light-text);
+      }
+
+      .floating-card {
+        animation: float 6s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      .rotating-icon {
+        animation: rotate 10s linear infinite;
+      }
+
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .pulse-icon {
+        animation: pulse 2s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      .interactive-image {
+        position: relative;
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      .interactive-image img {
+        width: 100%;
+        transition: transform 0.5s ease;
+      }
+
+      .interactive-image:hover img {
+        transform: scale(1.05);
+      }
+
+      .interactive-hotspots {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .hotspot {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: var(--accent-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        cursor: pointer;
+        box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
+        animation: pulse 2s infinite;
+        z-index: 2;
+      }
+
+      .hotspot-content {
+        position: absolute;
+        background-color: white;
+        border-radius: 10px;
+        padding: 1rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        width: 200px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 3;
+      }
+
+      .hotspot:hover + .hotspot-content {
+        opacity: 1;
+        visibility: visible;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Language Selector -->
+    <div class="language-selector">
+      <div class="container">
+        <div class="d-flex justify-content-end py-1">
+          <a href="#" class="lang-link active" data-lang="en">EN</a>
+          <a href="#" class="lang-link" data-lang="ru">RU</a>
+          <a href="#" class="lang-link" data-lang="uz">UZ</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="sticky-top">
+      <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <img
+              src="./img/article-original (1).png"
+              alt="Target International School Logo"
+              height="60"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="student-life.html">Student Life</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="academics.html">Academics</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="vision.html">Our Vision</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="advantages.html">Our Advantages</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="results.html">Results</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="dormitory.html">Dormitory</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Interactive Hero Section -->
+    <section
+      class="interactive-hero position-relative overflow-hidden"
+      style="height: 80vh; background-color: var(--primary-color)"
+    >
+      <div
+        class="position-absolute w-100 h-100"
+        style="
+          background: url('assets/academics-hero.jpg') center/cover no-repeat;
+          opacity: 0.4;
+        "
+      ></div>
+
+      <div class="container h-100 position-relative z-3">
+        <div class="row h-100 align-items-center">
+          <div class="col-lg-8 text-white">
+            <h1 class="display-3 fw-bold mb-4" data-aos="fade-right">
+              <span
+                class="d-block"
+                style="animation: fadeInUp 0.5s ease forwards"
+                >Academic</span
+              >
+              <span
+                class="d-block"
+                style="animation: fadeInUp 0.5s 0.2s ease forwards; opacity: 0"
+                >Excellence at</span
+              >
+              <span
+                class="d-block text-accent"
+                style="animation: fadeInUp 0.5s 0.4s ease forwards; opacity: 0"
+                >Target</span
+              >
+            </h1>
+            <p class="lead mb-4" data-aos="fade-right" data-aos-delay="300">
+              Our specialized curriculum focuses on Business and IT education,
+              preparing students for successful university admissions worldwide.
+            </p>
+            <div
+              class="d-flex flex-wrap gap-3"
+              data-aos="fade-up"
+              data-aos-delay="500"
+            >
+              <a href="#it" class="btn btn-accent btn-lg">IT Education</a>
+              <a href="#business" class="btn btn-outline-light btn-lg"
+                >Business Studies</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Animated Elements -->
+      <div
+        class="position-absolute"
+        style="
+          width: 300px;
+          height: 300px;
+          background-color: var(--accent-color);
+          border-radius: 50%;
+          top: -150px;
+          right: -150px;
+          opacity: 0.2;
+          animation: pulse 4s infinite;
+        "
+      ></div>
+      <div
+        class="position-absolute"
+        style="
+          width: 200px;
+          height: 200px;
+          background-color: var(--white);
+          border-radius: 50%;
+          bottom: -100px;
+          left: -100px;
+          opacity: 0.1;
+          animation: pulse 4s 1s infinite;
+        "
+      ></div>
+    </section>
+
+    <!-- Academic Overview -->
+    <section class="py-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+            <h2 class="section-title">Academic Excellence</h2>
+            <p class="lead">
+              Our curriculum is designed to challenge and inspire.
+            </p>
+            <p>
+              At Target International School, we offer a comprehensive
+              educational program that combines the best of international
+              standards with a deep understanding of local educational needs.
+              Our curriculum is designed to develop critical thinking,
+              creativity, and problem-solving skills while providing a strong
+              foundation in core academic subjects.
+            </p>
+            <p>
+              With a focus on Business and IT education, we prepare students for
+              the challenges of the 21st century global economy. Our graduates
+              consistently gain admission to prestigious universities worldwide,
+              a testament to the quality of education we provide.
+            </p>
+          </div>
+          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+            <div class="interactive-image">
+              <img
+                src="./img/clasroom-students.jpg"
+                alt="Students in classroom"
+                class="img-fluid"
+              />
+             
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- IT Education Program -->
+    <section id="it" class="program-section">
+      <div class="program-shape shape-1"></div>
+      <div class="program-shape shape-2"></div>
+      <i class="fas fa-laptop-code program-icon-large rotating-icon"></i>
+
+      <div class="container program-content">
+        <div class="row align-items-center">
+          <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0" data-aos="fade-left">
+            <h2 class="section-title">IT Education</h2>
+            <p class="lead">Preparing digital innovators for the future.</p>
+            <p>
+              Our IT curriculum is designed to develop technical skills,
+              computational thinking, and digital literacy. Students learn
+              programming, web development, database management, and other
+              essential IT skills through hands-on projects and real-world
+              applications.
+            </p>
+            <p>
+              The program is structured to progress from basic computer literacy
+              to advanced programming and system design, ensuring students
+              develop a comprehensive understanding of information technology.
+            </p>
+
+            <div class="mt-4">
+              <h5>Key Focus Areas:</h5>
+              <div class="row g-3 mt-2">
+                <div class="col-md-6" data-aos="zoom-in" data-aos-delay="100">
+                  <div class="feature-card">
+                    <div class="feature-icon">
+                      <i class="fas fa-code"></i>
+                    </div>
+                    <h5>Programming</h5>
+                    <p class="mb-0">
+                      Python, Java, JavaScript, and other essential languages.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-6" data-aos="zoom-in" data-aos-delay="200">
+                  <div class="feature-card">
+                    <div class="feature-icon">
+                      <i class="fas fa-globe"></i>
+                    </div>
+                    <h5>Web Development</h5>
+                    <p class="mb-0">
+                      HTML, CSS, JavaScript, and modern frameworks.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-6" data-aos="zoom-in" data-aos-delay="300">
+                  <div class="feature-card">
+                    <div class="feature-icon">
+                      <i class="fas fa-database"></i>
+                    </div>
+                    <h5>Database Systems</h5>
+                    <p class="mb-0">
+                      SQL, database design, and data management.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-6" data-aos="zoom-in" data-aos-delay="400">
+                  <div class="feature-card">
+                    <div class="feature-icon">
+                      <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h5>Mobile Development</h5>
+                    <p class="mb-0">
+                      Creating applications for iOS and Android platforms.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 order-lg-1" data-aos="fade-right">
+            <div class="floating-card">
+              <img
+                src="./img/it-xona.jpg"
+                alt="IT Education"
+                class="img-fluid rounded shadow-lg"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Business Studies Program -->
+    <section id="business" class="program-section">
+      <div class="program-shape shape-1"></div>
+      <div class="program-shape shape-2"></div>
+      <i class="fas fa-chart-line program-icon-large pulse-icon"></i>
+
+      <div class="container program-content">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+            <h2 class="section-title">Business Studies</h2>
+            <p class="lead">Developing tomorrow's business leaders.</p>
+            <p>
+              Our Business Studies program provides students with a solid
+              foundation in business principles, entrepreneurship, and
+              economics. Through case studies, simulations, and project-based
+              learning, students develop analytical thinking, problem-solving,
+              and leadership skills essential for success in the business world.
+            </p>
+            <p>
+              The curriculum covers a wide range of business disciplines, from
+              marketing and finance to management and international business,
+              preparing students for diverse career paths.
+            </p>
+
+            <div class="mt-4">
+              <h5>Key Focus Areas:</h5>
+              <div class="row g-3 mt-2">
+                <div class="col-md-6" data-aos="zoom-in" data-aos-delay="100">
+                  <div class="feature-card">
+                    <div class="feature-icon">
+                      <i class="fas fa-coins"></i>
+                    </div>
+                    <h5>Finance & Accounting</h5>
+                    <p class="mb-0">
+                      Financial analysis, accounting principles, and investment
+                      strategies.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-6" data-aos="zoom-in" data-aos-delay="200">
+                  <div class="feature-card">
+                    <div class="feature-icon">
+                      <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h5>Marketing</h5>
+                    <p class="mb-0">
+                      Market research, branding, digital marketing, and consumer
+                      behavior.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-6" data-aos="zoom-in" data-aos-delay="300">
+                  <div class="feature-card">
+                    <div class="feature-icon">
+                      <i class="fas fa-users"></i>
+                    </div>
+                    <h5>Management</h5>
+                    <p class="mb-0">
+                      Leadership, organizational behavior, and strategic
+                      management.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-6" data-aos="zoom-in" data-aos-delay="400">
+                  <div class="feature-card">
+                    <div class="feature-icon">
+                      <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h5>Entrepreneurship</h5>
+                    <p class="mb-0">
+                      Business planning, innovation, and startup development.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+            <div class="floating-card">
+              <img
+                src="./img/busniesslab.png"
+                alt="Business Studies"
+                class="img-fluid rounded shadow-lg"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curriculum Overview -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <h2 class="section-title text-center mb-5" data-aos="fade-up">
+          Curriculum Overview
+        </h2>
+
+        <ul
+          class="nav nav-tabs curriculum-tabs justify-content-center mb-4"
+          id="curriculumTabs"
+          role="tablist"
+          data-aos="fade-up"
+        >
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link active"
+              id="elementary-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#elementary"
+              type="button"
+              role="tab"
+              aria-controls="elementary"
+              aria-selected="true"
+            >
+              Grades 1-4
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="middle-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#middle"
+              type="button"
+              role="tab"
+              aria-controls="middle"
+              aria-selected="false"
+            >
+              Grades 5-8
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="high-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#high"
+              type="button"
+              role="tab"
+              aria-controls="high"
+              aria-selected="false"
+            >
+              Grades 9-11
+            </button>
+          </li>
+        </ul>
+
+        <div class="tab-content" id="curriculumTabsContent">
+          <div
+            class="tab-pane fade show active"
+            id="elementary"
+            role="tabpanel"
+            aria-labelledby="elementary-tab"
+          >
+            <div class="row">
+              <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                <h3 class="mb-4">Elementary School (Grades 1-4)</h3>
+                <p>
+                  Our elementary program focuses on building a strong foundation
+                  in core subjects while nurturing curiosity and a love for
+                  learning. Students develop essential literacy and numeracy
+                  skills through engaging, hands-on activities.
+                </p>
+                <p>
+                  The curriculum integrates technology from an early age,
+                  introducing students to basic computer skills and digital
+                  literacy. Creative arts, physical education, and character
+                  development are also important components of our elementary
+                  program.
+                </p>
+              </div>
+              <div class="col-lg-6" data-aos="fade-left">
+                <h4 class="mb-3">Core Subjects</h4>
+                <div class="row">
+                  <div class="col-md-6">
+                    <ul class="subject-list">
+                      <li>
+                        <i class="fas fa-check-circle"></i> English Language
+                      </li>
+                      <li><i class="fas fa-check-circle"></i> Mathematics</li>
+                      <li><i class="fas fa-check-circle"></i> Science</li>
+                      <li>
+                        <i class="fas fa-check-circle"></i> Social Studies
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6">
+                    <ul class="subject-list">
+                      <li>
+                        <i class="fas fa-check-circle"></i> Uzbek Language
+                      </li>
+                      <li>
+                        <i class="fas fa-check-circle"></i> Computer Skills
+                      </li>
+                      <li><i class="fas fa-check-circle"></i> Art & Music</li>
+                      <li>
+                        <i class="fas fa-check-circle"></i> Physical Education
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="middle"
+            role="tabpanel"
+            aria-labelledby="middle-tab"
+          >
+            <div class="row">
+              <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                <h3 class="mb-4">Middle School (Grades 5-8)</h3>
+                <p>
+                  Our middle school program builds on the elementary foundation
+                  while introducing more specialized subjects. Students begin to
+                  explore their interests and aptitudes through a broader range
+                  of courses.
+                </p>
+                <p>
+                  The curriculum emphasizes critical thinking, research skills,
+                  and independent learning. Students are introduced to more
+                  advanced concepts in IT and business, preparing them for the
+                  specialized high school program.
+                </p>
+              </div>
+              <div class="col-lg-6" data-aos="fade-left">
+                <h4 class="mb-3">Core Subjects</h4>
+                <div class="row">
+                  <div class="col-md-6">
+                    <ul class="subject-list">
+                      <li>
+                        <i class="fas fa-check-circle"></i> English Language &
+                        Literature
+                      </li>
+                      <li>
+                        <i class="fas fa-check-circle"></i> Advanced Mathematics
+                      </li>
+                      <li>
+                        <i class="fas fa-check-circle"></i> Biology, Chemistry,
+                        Physics
+                      </li>
+                      <li>
+                        <i class="fas fa-check-circle"></i> History & Geography
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6">
+                    <ul class="subject-list">
+                      <li>
+                        <i class="fas fa-check-circle"></i> Uzbek & Foreign
+                        Languages
+                      </li>
+                      <li>
+                        <i class="fas fa-check-circle"></i> Introduction to
+                        Programming
+                      </li>
+                      <li>
+                        <i class="fas fa-check-circle"></i> Business
+                        Fundamentals
+                      </li>
+                      <li>
+                        <i class="fas fa-check-circle"></i> Arts, Music &
+                        Physical Education
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="high"
+            role="tabpanel"
+            aria-labelledby="high-tab"
+          >
+            <div class="row">
+              <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                <h3 class="mb-4">High School (Grades 9-11)</h3>
+                <p>
+                  Our high school program offers specialized tracks in IT and
+                  Business, allowing students to focus on their areas of
+                  interest while maintaining a strong foundation in core
+                  academic subjects.
+                </p>
+                <p>
+                  The curriculum is designed to prepare students for
+                  international university admissions, with dedicated IELTS and
+                  SAT preparation programs. Project-based learning, internships,
+                  and mentorship opportunities provide practical experience and
+                  real-world connections.
+                </p>
+              </div>
+              <div class="col-lg-6" data-aos="fade-left">
+                <h4 class="mb-3">Specialized Tracks</h4>
+                <div class="row">
+                  <div class="col-md-6">
+                    <h5 class="h6 mb-2">IT Track</h5>
+                    <ul class="subject-list">
+                      <li>
+                        <i class="fas fa-check-circle"></i> Advanced Programming
+                      </li>
+                      <li>
+                        <i class="fas fa-check-circle"></i> Web & Mobile
+                        Development
+                      </li>
+                      <li>
+                        <i class="fas fa-check-circle"></i> Database Systems
+                      </li>
+                      <li>
+                        <i class="fas fa-check-circle"></i> Computer Science
+                        Principles
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6">
+                    <h5 class="h6 mb-2">Business Track</h5>
+                    <ul class="subject-list">
+                      <li><i class="fas fa-check-circle"></i> Economics</li>
+                      <li>
+                        <i class="fas fa-check-circle"></i> Business Management
+                      </li>
+                      <li>
+                        <i class="fas fa-check-circle"></i> Accounting & Finance
+                      </li>
+                      <li>
+                        <i class="fas fa-check-circle"></i> Marketing &
+                        Entrepreneurship
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- University Preparation -->
+    <section id="university-prep" class="py-5">
+      <div class="container">
+        <h2 class="section-title text-center mb-5" data-aos="fade-up">
+          University Preparation
+        </h2>
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+            <h3>IELTS Preparation</h3>
+            <p class="lead">
+              Achieving excellence in English language proficiency.
+            </p>
+            <p>
+              Our comprehensive IELTS preparation program is designed to help
+              students achieve the scores they need for admission to top
+              universities worldwide. The program covers all four components of
+              the IELTS exam: Listening, Reading, Writing, and Speaking.
+            </p>
+            <p>
+              Led by experienced IELTS instructors, the program includes
+              practice tests, personalized feedback, and targeted strategies for
+              each section of the exam. Our students consistently achieve scores
+              of 7.0 and above, meeting the requirements of the most prestigious
+              universities.
+            </p>
+            <div class="mt-4">
+              <a href="#" class="btn btn-outline-primary"
+                >Learn More About IELTS Prep</a
+              >
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+            <div class="row g-4">
+              <div class="col-md-6">
+                <div class="stats-card" data-aos="zoom-in" data-aos-delay="100">
+                  <div class="stats-number">6.5+</div>
+                  <div class="stats-label">Average IELTS Score</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="stats-card" data-aos="zoom-in" data-aos-delay="200">
+                  <div class="stats-number">78%</div>
+                  <div class="stats-label">University Acceptance Rate</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="stats-card" data-aos="zoom-in" data-aos-delay="300">
+                  <div class="stats-number">10+</div>
+                  <div class="stats-label">Partner Universities</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="stats-card" data-aos="zoom-in" data-aos-delay="400">
+                  <div class="stats-number">70%</div>
+                  <div class="stats-label">Scholarship Recipients</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row align-items-center mt-5 pt-5">
+          <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0" data-aos="fade-left">
+            <h3>SAT Preparation</h3>
+            <p class="lead">
+              Maximizing scores for U.S. university admissions.
+            </p>
+            <p>
+              Our SAT preparation program is tailored to help students excel in
+              this critical standardized test required by most U.S.
+              universities. The program covers all sections of the SAT:
+              Evidence-Based Reading and Writing, Math, and the optional Essay.
+            </p>
+            <p>
+              Through diagnostic assessments, targeted instruction, and regular
+              practice tests, we identify each student's strengths and areas for
+              improvement. Our experienced instructors provide personalized
+              strategies and techniques to maximize scores.
+            </p>
+            <div class="mt-4">
+              <a href="#" class="btn btn-outline-primary"
+                >Learn More About SAT Prep</a
+              >
+            </div>
+          </div>
+          <div
+            class="col-lg-6 order-lg-1"
+            data-aos="fade-right"
+            data-aos-delay="200"
+          >
+            <img
+              src="./img/sat-darsi.png"
+              alt="SAT Preparation"
+              class="img-fluid rounded shadow-lg"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Faculty Section -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <h2 class="section-title text-center mb-5" data-aos="fade-up">
+          Our Faculty
+        </h2>
+        <p
+          class="text-center mb-5 lead"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          Our dedicated teachers bring expertise, passion, and international
+          experience to the classroom.
+        </p>
+
+        <div class="row">
+          <div
+            class="col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="faculty-card">
+              <div class="faculty-image">
+                <img src="./img/techer1.png" alt="Faculty Member" />
+              </div>
+              <div class="faculty-overlay">
+                <h4 class="faculty-name">Mr.Sardor</h4>
+                <p class="faculty-position">Main math teacher</p>
+                <p class="faculty-bio">
+                  Ph.D. in Maths, with 5 years of experience
+                  in education and industry. Specializes in SAT math and 
+                  advanced math.
+                </p>
+                <div class="faculty-social">
+                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="faculty-card">
+              <div class="faculty-image">
+                <img src="./img/teacher2.png" alt="Faculty Member" />
+              </div>
+              <div class="faculty-overlay">
+                <h4 class="faculty-name">Mr. Zokirjon</h4>
+                <p class="faculty-position">Head of Business Studies</p>
+                <p class="faculty-bio">
+                  Has already helped 150+ students to achieved their deisred IELTS results, which 100+ of them got 7.0+.
+                </p>
+                <div class="faculty-social">
+                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="faculty-card">
+              <div class="faculty-image">
+                <img src="assets/faculty3.jpg" alt="Faculty Member" />
+              </div>
+              <div class="faculty-overlay">
+                <h4 class="faculty-name">Ms. Elena Kim</h4>
+                <p class="faculty-position">IELTS Coordinator</p>
+                <p class="faculty-bio">
+                  Master's in TESOL from University of London. Certified IELTS
+                  examiner with over 10 years of experience in language
+                  teaching.
+                </p>
+                <div class="faculty-social">
+                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div class="faculty-card">
+              <div class="faculty-image">
+                <img src="assets/faculty4.jpg" alt="Faculty Member" />
+              </div>
+              <div class="faculty-overlay">
+                <h4 class="faculty-name">Dr. Michael Chen</h4>
+                <p class="faculty-position">Mathematics Department</p>
+                <p class="faculty-bio">
+                  Ph.D. in Mathematics from Stanford University. Specializes in
+                  advanced calculus and statistics. Former university professor.
+                </p>
+                <div class="faculty-social">
+                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-4">
+          <a
+            href="#"
+            class="btn btn-outline-primary"
+            data-aos="fade-up"
+            data-aos-delay="500"
+            >Meet Our Full Faculty</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Student Success Stories -->
+    <section class="py-5">
+      <div class="container">
+        <h2 class="section-title text-center mb-5" data-aos="fade-up">
+          Student Success Stories
+        </h2>
+
+        <div class="row">
+          <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="testimonial-card">
+              <div class="testimonial-image">
+                <img src="./img/abdulaziz-muxamadjonov.jpg" alt="Student" />
+              </div>
+              <div class="testimonial-content">
+                <p class="testimonial-text">
+                  "I came to Target International School in September with a dream of studying. With the guidence of my teachers like Mr.Ulugbek, Mr.Diyor and Mr.Husniddin I was able to achieve SAT score of 1450 and get into Gettysburg college with full-tuition scholarship, and got approved from USA Visa."
+                </p>
+                <h5 class="testimonial-author">Abdulaziz Maxamadjonov</h5>
+                <p class="testimonial-position">Class of 2029, Gettysburg college</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="testimonial-card">
+              <div class="testimonial-image">
+                <img src="./img/diyorbek-namozov.jpg" alt="Student" />
+              </div>
+              <div class="testimonial-content">
+                <p class="testimonial-text">
+                  "I studied at Target International school since 9th grade, this school has significantly changed my mindset and the teachers guided me till I got into my dream university - University of Toronto with a full-ride scholarship of Lester B which is given to only 27 students wolrdwide.
+                </p>
+                <h5 class="testimonial-author">Namozov Diyorbek</h5>
+                <p class="testimonial-position">Class of 2028, University of Toronto</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="testimonial-card">
+              <div class="testimonial-image">
+                <img src="./img/najmitdinn.png" alt="Student" />
+              </div>
+              <div class="testimonial-content">
+                <p class="testimonial-text">
+                  "           I joined Target in 9th grade, and since then, I have achieved a score of 7.5 in IELTS with the help of Mr. Zokirjon. Also, with the help of SAT teachers, I achieved an SAT score of 1520, which helped me to win my deserved scholarship to the University of Toronto."
+                </p>
+                <h5 class="testimonial-author">Najmitdin Muxitdinov</h5>
+                <p class="testimonial-position">Class of 2029, University of Toronto</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-4">
+          <a
+            href="#"
+            class="btn btn-outline-primary"
+            data-aos="fade-up"
+            data-aos-delay="400"
+            >Read More Success Stories</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section cta-accent py-5 text-white text-center">
+      <div class="container">
+        <h2 class="mb-4" data-aos="fade-up">
+          Ready to Join Our Academic Community?
+        </h2>
+        <p class="lead mb-4" data-aos="fade-up" data-aos-delay="100">
+          Experience our innovative curriculum and prepare for a successful
+          future.
+        </p>
+        <div
+          class="d-flex justify-content-center gap-3 flex-wrap"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <a href="contact.html" class="btn btn-light btn-lg">Apply Now</a>
+          <a href="#" class="btn btn-outline-light btn-lg"
+            >Request Information</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <img
+              src="./img/logo-blue.png"
+              alt="Target International School Logo"
+              height="60"
+              class="mb-3"
+            />
+            <p>
+              Target International School provides quality education with a
+              focus on Business and IT, preparing students for successful
+              international university admissions.
+            </p>
+            <div class="social-links mt-3">
+              <a href="#" class="social-link"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="social-link"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-link"
+                ><i class="fab fa-telegram"></i
+              ></a>
+              <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+          <div class="col-md-4 col-lg-2">
+            <h5 class="footer-heading">Quick Links</h5>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="academics.html">Academics</a></li>
+              <li><a href="student-life.html">Student Life</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4 col-lg-2">
+            <h5 class="footer-heading">Programs</h5>
+            <ul class="footer-links">
+              <li><a href="academics.html#it">IT Education</a></li>
+              <li><a href="academics.html#business">Business Studies</a></li>
+              <li><a href="academics.html#ielts">IELTS Preparation</a></li>
+              <li><a href="academics.html#sat">SAT Preparation</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4 col-lg-4">
+            <h5 class="footer-heading">Contact Us</h5>
+            <address class="mb-0">
+              <p>
+                <i class="fas fa-map-marker-alt me-2"></i> 123 Education Street,
+                Tashkent, Uzbekistan
+              </p>
+              <p><i class="fas fa-phone me-2"></i> +998 71 123 4567</p>
+              <p><i class="fas fa-envelope me-2"></i> info@targetschool.uz</p>
+            </address>
+          </div>
+        </div>
+        <hr class="mt-4 mb-3" />
+        <div class="row">
+          <div class="col-md-6">
+            <p class="mb-md-0">
+              &copy; 2023 Target International School. All Rights Reserved.
+            </p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <ul class="footer-bottom-links">
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" aria-label="Back to top">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Language System -->
+    <script src="js/languages.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    <script>
+      // Initialize AOS animation library
+      AOS.init({
+        duration: 800,
+        easing: "ease-in-out",
+        once: true,
+        mirror: false,
+      });
+
+      // Add custom animations for hero section
+      document.addEventListener("DOMContentLoaded", function () {
+        // Custom animation keyframes
+        const style = document.createElement("style");
+        style.textContent = `
+                @keyframes fadeInUp {
+                    from {
+                        opacity: 0;
+                        transform: translateY(20px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+            `;
+        document.head.appendChild(style);
+      });
+    </script>
+  </body>
+</html>

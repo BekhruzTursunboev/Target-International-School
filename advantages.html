@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Advantages - Target International School</title>
+    <meta
+      name="description"
+      content="Discover the unique advantages of Target International School in Tashkent, Uzbekistan - specialized curriculum, experienced faculty, and more."
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <style>
+      /* Page-specific styles */
+      .advantages-hero {
+        position: relative;
+        height: 80vh;
+        overflow: hidden;
+        background-color: var(--primary-color);
+      }
+
+      .advantages-hero-content {
+        position: relative;
+        z-index: 2;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .advantages-hero-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        opacity: 0.3;
+      }
+
+      .advantages-hero-title {
+        font-size: 5rem;
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        line-height: 1.1;
+      }
+
+      .advantages-hero-subtitle {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        max-width: 700px;
+      }
+
+      .advantage-card {
+        position: relative;
+        background-color: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+        height: 100%;
+        transition: all 0.5s ease;
+        z-index: 1;
+      }
+
+      .advantage-card:hover {
+        transform: translateY(-15px);
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+      }
+
+      .advantage-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: linear-gradient(
+          90deg,
+          var(--primary-color),
+          var(--accent-color)
+        );
+      }
+
+      .advantage-icon {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-color: var(--primary-color);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        transition: all 0.5s ease;
+      }
+
+      .advantage-card:hover .advantage-icon {
+        background-color: var(--accent-color);
+        transform: rotateY(180deg);
+      }
+
+      .advantage-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: var(--primary-color);
+      }
+
+      .advantage-content {
+        padding: 2rem;
+      }
+
+      .feature-section {
+        position: relative;
+        padding: 5rem 0;
+        overflow: hidden;
+      }
+
+      .feature-section:nth-child(even) {
+        background-color: var(--secondary-color);
+      }
+
+      .feature-image {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+        transition: all 0.5s ease;
+      }
+
+      .feature-image:hover {
+        transform: scale(1.05);
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+      }
+
+      .feature-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .feature-title {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 1.5rem;
+      }
+
+      .feature-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 80px;
+        height: 5px;
+        background: linear-gradient(
+          90deg,
+          var(--primary-color),
+          var(--accent-color)
+        );
+      }
+
+      .feature-list {
+        list-style: none;
+        padding-left: 0;
+        margin-top: 2rem;
+      }
+
+      .feature-list li {
+        position: relative;
+        padding-left: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      .feature-list li::before {
+        content: "\f00c";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: var(--accent-color);
+      }
+
+      .comparison-section {
+        position: relative;
+        padding: 5rem 0;
+        background-color: var(--secondary-color);
+      }
+
+      .comparison-table {
+        background-color: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+      }
+
+      .comparison-table th {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 1.5rem;
+        text-align: center;
+        font-weight: 600;
+      }
+
+      .comparison-table th:first-child {
+        text-align: left;
+      }
+
+      .comparison-table td {
+        padding: 1.5rem;
+        text-align: center;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      .comparison-table td:first-child {
+        text-align: left;
+        font-weight: 600;
+        color: var(--primary-color);
+      }
+
+      .comparison-table tr:last-child td {
+        border-bottom: none;
+      }
+
+      .comparison-check {
+        color: var(--accent-color);
+        font-size: 1.5rem;
+      }
+
+      .comparison-x {
+        color: #ccc;
+        font-size: 1.5rem;
+      }
+
+      .testimonial-section {
+        position: relative;
+        padding: 5rem 0;
+      }
+
+      .testimonial-card {
+        position: relative;
+        background-color: white;
+        border-radius: 20px;
+        padding: 2rem;
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+        margin-top: 50px;
+        transition: all 0.5s ease;
+      }
+
+      .testimonial-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+      }
+
+      .testimonial-image {
+        position: absolute;
+        top: -50px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 5px solid white;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .testimonial-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .testimonial-content {
+        text-align: center;
+        padding-top: 3rem;
+      }
+
+      .testimonial-text {
+        font-style: italic;
+        margin-bottom: 1.5rem;
+        position: relative;
+      }
+
+      .testimonial-text::before,
+      .testimonial-text::after {
+        content: '"';
+        font-size: 2rem;
+        color: var(--accent-color);
+        position: absolute;
+        opacity: 0.3;
+      }
+
+      .testimonial-text::before {
+        top: -10px;
+        left: -10px;
+      }
+
+      .testimonial-text::after {
+        bottom: -30px;
+        right: -10px;
+      }
+
+      .testimonial-name {
+        font-weight: 700;
+        color: var(--primary-color);
+        margin-bottom: 0.25rem;
+      }
+
+      .testimonial-position {
+        color: var(--light-text);
+      }
+
+      .stats-section {
+        position: relative;
+        padding: 5rem 0;
+        background: linear-gradient(
+          135deg,
+          var(--primary-color) 0%,
+          var(--primary-dark) 100%
+        );
+        color: white;
+      }
+
+      .stats-card {
+        text-align: center;
+        padding: 2rem;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        height: 100%;
+        transition: all 0.3s ease;
+      }
+
+      .stats-card:hover {
+        transform: translateY(-10px);
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+
+      .stats-icon {
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+        color: var(--accent-color);
+      }
+
+      .stats-number {
+        font-size: 3rem;
+        font-weight: 800;
+        margin-bottom: 0.5rem;
+      }
+
+      .stats-label {
+        font-size: 1.25rem;
+        opacity: 0.9;
+      }
+
+      .cta-section {
+        position: relative;
+        padding: 5rem 0;
+        background-color: var(--secondary-color);
+        overflow: hidden;
+      }
+
+      .cta-shape {
+        position: absolute;
+        border-radius: 50%;
+        background-color: var(--accent-color);
+        opacity: 0.05;
+        z-index: 0;
+      }
+
+      .cta-shape-1 {
+        width: 300px;
+        height: 300px;
+        top: -150px;
+        right: -150px;
+      }
+
+      .cta-shape-2 {
+        width: 200px;
+        height: 200px;
+        bottom: -100px;
+        left: -100px;
+      }
+
+      .cta-content {
+        position: relative;
+        z-index: 1;
+        background-color: white;
+        border-radius: 20px;
+        padding: 3rem;
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+      }
+
+      .cta-title {
+        font-size: 2.5rem;
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        color: var(--primary-color);
+      }
+
+      .cta-text {
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+        color: var(--light-text);
+      }
+
+      .floating-element {
+        animation: float 6s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      .rotating-element {
+        animation: rotate 15s linear infinite;
+      }
+
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .pulse-element {
+        animation: pulse 2s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      @media (max-width: 991.98px) {
+        .advantages-hero-title {
+          font-size: 3.5rem;
+        }
+
+        .cta-title {
+          font-size: 2rem;
+        }
+
+        .cta-text {
+          font-size: 1rem;
+        }
+
+        .stats-number {
+          font-size: 2.5rem;
+        }
+
+        .stats-label {
+          font-size: 1rem;
+        }
+      }
+
+      @media (max-width: 767.98px) {
+        .advantages-hero-title {
+          font-size: 2.5rem;
+        }
+
+        .advantages-hero-subtitle {
+          font-size: 1.25rem;
+        }
+
+        .advantage-icon {
+          width: 60px;
+          height: 60px;
+          font-size: 1.5rem;
+        }
+
+        .advantage-title {
+          font-size: 1.25rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Language Selector -->
+    <div class="language-selector">
+      <div class="container">
+        <div class="d-flex justify-content-end py-1">
+          <a href="#" class="lang-link active" data-lang="en">EN</a>
+          <a href="#" class="lang-link" data-lang="ru">RU</a>
+          <a href="#" class="lang-link" data-lang="uz">UZ</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="sticky-top">
+      <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <img
+              src="./img/article-original (1).png"
+              alt="Target International School Logo"
+              height="60"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="student-life.html">Student Life</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="academics.html">Academics</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="vision.html">Our Vision</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="advantages.html"
+                  >Our Advantages</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="results.html">Results</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="dormitory.html">Dormitory</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Advantages Hero Section -->
+    <section class="advantages-hero">
+      <div
+        class="advantages-hero-bg"
+        style="background-image: url('assets/advantages-hero.jpg')"
+      ></div>
+
+      <div class="container advantages-hero-content">
+        <div class="row">
+          <div class="col-lg-8 text-white">
+            <h1 class="advantages-hero-title" data-aos="fade-right">
+              <span
+                class="d-block"
+                style="animation: fadeInUp 0.5s ease forwards"
+                >Why Choose</span
+              >
+              <span
+                class="d-block text-accent"
+                style="animation: fadeInUp 0.5s 0.2s ease forwards; opacity: 0"
+                >Target School?</span
+              >
+            </h1>
+            <p
+              class="advantages-hero-subtitle"
+              data-aos="fade-right"
+              data-aos-delay="300"
+            >
+              Discover the unique advantages that set Target International
+              School apart and make it the ideal choice for your child's
+              education.
+            </p>
+            <div data-aos="fade-up" data-aos-delay="500">
+              <a href="#advantages" class="btn btn-accent btn-lg"
+                >Explore Our Advantages</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Animated Elements -->
+      <div
+        class="position-absolute"
+        style="
+          width: 300px;
+          height: 300px;
+          background-color: var(--accent-color);
+          border-radius: 50%;
+          top: -150px;
+          right: -150px;
+          opacity: 0.2;
+          animation: pulse 4s infinite;
+        "
+      ></div>
+      <div
+        class="position-absolute"
+        style="
+          width: 200px;
+          height: 200px;
+          background-color: var(--white);
+          border-radius: 50%;
+          bottom: -100px;
+          left: -100px;
+          opacity: 0.1;
+          animation: pulse 4s 1s infinite;
+        "
+      ></div>
+    </section>
+
+    <!-- Key Advantages Section -->
+    <section id="advantages" class="py-5">
+      <div class="container">
+        <h2 class="section-title text-center mb-5" data-aos="fade-up">
+          Our Key Advantages
+        </h2>
+
+        <div class="row g-4">
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="advantage-card">
+              <div class="advantage-content">
+                <div class="advantage-icon">
+                  <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h3 class="advantage-title">Specialized Curriculum</h3>
+                <p>
+                  Our curriculum focuses on Business and IT education, providing
+                  students with the knowledge and skills needed for success in
+                  these high-demand fields.
+                </p>
+                <p>
+                  With a balance of theoretical knowledge and practical
+                  application, students develop a deep understanding of business
+                  principles and information technology.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="advantage-card">
+              <div class="advantage-content">
+                <div class="advantage-icon">
+                  <i class="fas fa-chalkboard-teacher"></i>
+                </div>
+                <h3 class="advantage-title">Experienced Faculty</h3>
+                <p>
+                  Our teachers are highly qualified professionals with
+                  international experience and certifications in their
+                  respective fields.
+                </p>
+                <p>
+                  Small class sizes allow our faculty to provide personalized
+                  attention to each student, addressing individual learning
+                  needs and fostering academic growth.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="advantage-card">
+              <div class="advantage-content">
+                <div class="advantage-icon">
+                  <i class="fas fa-globe"></i>
+                </div>
+                <h3 class="advantage-title">International Focus</h3>
+                <p>
+                  Our educational approach prepares students for global
+                  opportunities, with a strong emphasis on English language
+                  proficiency and international standards.
+                </p>
+                <p>
+                  Students develop cultural awareness and global perspectives
+                  through interactions with our diverse community and
+                  international educational content.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div class="advantage-card">
+              <div class="advantage-content">
+                <div class="advantage-icon">
+                  <i class="fas fa-laptop"></i>
+                </div>
+                <h3 class="advantage-title">Modern Facilities</h3>
+                <p>
+                  Our campuses feature state-of-the-art facilities, including
+                  computer labs, science laboratories, and multimedia classrooms
+                  equipped with the latest technology.
+                </p>
+                <p>
+                  Students have access to digital learning resources and
+                  platforms that enhance their educational experience and
+                  develop their technological literacy.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="500"
+          >
+            <div class="advantage-card">
+              <div class="advantage-content">
+                <div class="advantage-icon">
+                  <i class="fas fa-university"></i>
+                </div>
+                <h3 class="advantage-title">University Preparation</h3>
+                <p>
+                  Our specialized IELTS and SAT preparation programs help
+                  students achieve the scores needed for admission to top
+                  universities worldwide.
+                </p>
+                <p>
+                  Comprehensive university counseling services guide students
+                  through the application process, from selecting universities
+                  to securing scholarships.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="600"
+          >
+            <div class="advantage-card">
+              <div class="advantage-content">
+                <div class="advantage-icon">
+                  <i class="fas fa-users"></i>
+                </div>
+                <h3 class="advantage-title">Supportive Community</h3>
+                <p>
+                  We foster a close-knit, supportive community where students
+                  feel valued, respected, and encouraged to reach their full
+                  potential.
+                </p>
+                <p>
+                  Regular parent-teacher communication ensures that families are
+                  actively involved in their children's education and progress.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Academic Excellence Feature -->
+    <section class="feature-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+            <h2 class="feature-title">Academic Excellence</h2>
+            <p class="lead">
+              Our commitment to academic excellence sets us apart.
+            </p>
+            <p>
+              At Target International School, we maintain high academic
+              standards and expectations for all students. Our rigorous
+              curriculum challenges students to think critically, solve complex
+              problems, and develop a deep understanding of subject matter.
+            </p>
+            <p>
+              We regularly assess student progress and provide targeted support
+              to ensure that every student achieves their academic potential.
+              Our approach to education balances academic rigor with creativity
+              and innovation, preparing students for success in higher education
+              and beyond.
+            </p>
+
+            <ul class="feature-list">
+              <li>
+                Comprehensive curriculum aligned with international standards
+              </li>
+              <li>Regular assessments and feedback to track progress</li>
+              <li>
+                Advanced placement and honors courses for high-achieving
+                students
+              </li>
+              <li>
+                Academic support services for students who need additional help
+              </li>
+              <li>Recognition and celebration of academic achievements</li>
+            </ul>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+            <div class="feature-image floating-element">
+              <img src="./img/results.jpg" alt="Academic Excellence" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technology Integration Feature -->
+    <section class="feature-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 order-lg-2 mb-5 mb-lg-0" data-aos="fade-left">
+            <h2 class="feature-title">Technology Integration</h2>
+            <p class="lead">
+              Technology is seamlessly integrated into all aspects of our
+              educational program.
+            </p>
+            <p>
+              Our classrooms are equipped with interactive smartboards,
+              high-speed internet, and digital learning platforms that enhance
+              teaching and learning. Students have access to computer labs with
+              the latest hardware and software, enabling them to develop
+              essential digital skills.
+            </p>
+            <p>
+              We use technology not just as a tool, but as an integral part of
+              the learning process. From coding and web development to digital
+              design and multimedia production, our students gain hands-on
+              experience with technologies that are relevant in today's digital
+              world.
+            </p>
+
+            <ul class="feature-list">
+              <li>1:1 device program for middle and high school students</li>
+              <li>
+                Specialized computer labs for programming and digital media
+              </li>
+              <li>Digital literacy integrated across all subjects</li>
+              <li>
+                Online learning platforms for extended learning opportunities
+              </li>
+              <li>Robotics and coding clubs for practical application</li>
+            </ul>
+          </div>
+
+          <div
+            class="col-lg-6 order-lg-1"
+            data-aos="fade-right"
+            data-aos-delay="200"
+          >
+            <div class="feature-image">
+              <img src="./img/it-xona.jpg" alt="Technology Integration" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Global Perspective Feature -->
+    <section class="feature-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+            <h2 class="feature-title">Global Perspective</h2>
+            <p class="lead">
+              We prepare students to thrive in an interconnected world.
+            </p>
+            <p>
+              In today's globalized society, it's essential for students to
+              develop an understanding and appreciation of different cultures,
+              perspectives, and global issues. Our curriculum incorporates
+              international content and perspectives, exposing students to
+              diverse ideas and viewpoints.
+            </p>
+            <p>
+              Through language learning, cultural exchanges, and global
+              awareness activities, our students develop the intercultural
+              competence needed to succeed in an increasingly interconnected
+              world.
+            </p>
+
+            <ul class="feature-list">
+              <li>
+                Multilingual education with emphasis on English proficiency
+              </li>
+              <li>International curriculum content and resources</li>
+              <li>Cultural exchange programs and international partnerships</li>
+              <li>Model United Nations and global issues awareness</li>
+              <li>
+                Celebration of cultural diversity and international events
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+            <div class="feature-image pulse-element">
+              <img src="./img/globa-connect.jpg" alt="Global Perspective" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="comparison-section">
+      <div class="container">
+        <h2 class="section-title text-center mb-5" data-aos="fade-up">
+          How We Compare
+        </h2>
+
+        <div class="comparison-table" data-aos="fade-up" data-aos-delay="200">
+          <table class="table table-borderless mb-0">
+            <thead>
+              <tr>
+                <th>Features</th>
+                <th>Target International School</th>
+                <th>Other International Schools</th>
+                <th>Local Schools</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Specialized Business & IT Focus</td>
+                <td><i class="fas fa-check comparison-check"></i></td>
+                <td><i class="fas fa-times comparison-x"></i></td>
+                <td><i class="fas fa-times comparison-x"></i></td>
+              </tr>
+              <tr>
+                <td>IELTS & SAT Preparation</td>
+                <td><i class="fas fa-check comparison-check"></i></td>
+                <td><i class="fas fa-check comparison-check"></i></td>
+                <td><i class="fas fa-times comparison-x"></i></td>
+              </tr>
+              <tr>
+                <td>Small Class Sizes (15 students avg.)</td>
+                <td><i class="fas fa-check comparison-check"></i></td>
+                <td><i class="fas fa-check comparison-check"></i></td>
+                <td><i class="fas fa-times comparison-x"></i></td>
+              </tr>
+              <tr>
+                <td>100% University Acceptance Rate</td>
+                <td><i class="fas fa-check comparison-check"></i></td>
+                <td><i class="fas fa-times comparison-x"></i></td>
+                <td><i class="fas fa-times comparison-x"></i></td>
+              </tr>
+              <tr>
+                <td>Experienced International Faculty</td>
+                <td><i class="fas fa-check comparison-check"></i></td>
+                <td><i class="fas fa-check comparison-check"></i></td>
+                <td><i class="fas fa-times comparison-x"></i></td>
+              </tr>
+              <tr>
+                <td>State-of-the-Art Technology</td>
+                <td><i class="fas fa-check comparison-check"></i></td>
+                <td><i class="fas fa-check comparison-check"></i></td>
+                <td><i class="fas fa-times comparison-x"></i></td>
+              </tr>
+              <tr>
+                <td>Comprehensive University Counseling</td>
+                <td><i class="fas fa-check comparison-check"></i></td>
+                <td><i class="fas fa-check comparison-check"></i></td>
+                <td><i class="fas fa-times comparison-x"></i></td>
+              </tr>
+              <tr>
+                <td>Scholarship Guidance</td>
+                <td><i class="fas fa-check comparison-check"></i></td>
+                <td><i class="fas fa-times comparison-x"></i></td>
+                <td><i class="fas fa-times comparison-x"></i></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Parent Testimonials -->
+    <section class="testimonial-section">
+      <div class="container">
+        <h2 class="section-title text-center mb-5" data-aos="fade-up">
+          What Parents Say
+        </h2>
+
+        <div class="row g-4">
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="testimonial-card">
+              <div class="testimonial-image">
+                <img src="./img/parent.png" alt="Parent" />
+              </div>
+              <div class="testimonial-content">
+                <p class="testimonial-text">
+                  "Choosing Target International School for our daughter was one
+                  of the best decisions we've made. The specialized curriculum
+                  and dedicated teachers have helped her develop not only
+                  academically but also as a confident, well-rounded
+                  individual."
+                </p>
+                <h4 class="testimonial-name">Mrs. Karimova</h4>
+                <p class="testimonial-position">Parent of a Student</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="testimonial-card">
+              <div class="testimonial-image">
+                <img src="./img/rasul-kusherbayev.jpg" alt="Parent" />
+              </div>
+              <div class="testimonial-content">
+                <p class="testimonial-text">
+                  "What sets Target International School apart is their focus on
+                  preparing students for the future. The IT and business
+                  education my son receives is exceptional, and the university
+                  counseling services have been invaluable in planning his
+                  higher education."
+                </p>
+                <h4 class="testimonial-name">Rasul Kusherbayev</h4>
+                <p class="testimonial-position">
+                  Parent of a student in a Sergeli Branch
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="testimonial-card">
+              <div class="testimonial-image">
+                <img src="./img/parent2.png" alt="Parent" />
+              </div>
+              <div class="testimonial-content">
+                <p class="testimonial-text">
+                  "The supportive community at Target International School has
+                  made our transition to Tashkent so much easier. The teachers
+                  and staff genuinely care about each student's success and
+                  well-being. We couldn't be happier with our choice."
+                </p>
+                <h4 class="testimonial-name">Mrs. Akmal</h4>
+                <p class="testimonial-position">Parent of Grade 8 Student</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Statistics Section -->
+    <section class="stats-section">
+      <div class="container">
+        <h2 class="text-center text-white mb-5" data-aos="fade-up">
+          By the Numbers
+        </h2>
+
+        <div class="row g-4">
+          <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="stats-card">
+              <div class="stats-icon">
+                <i class="fas fa-user-graduate"></i>
+              </div>
+              <div class="stats-number" id="student-count">500+</div>
+              <div class="stats-label">Students</div>
+            </div>
+          </div>
+
+          <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+            <div class="stats-card">
+              <div class="stats-icon">
+                <i class="fas fa-chalkboard-teacher"></i>
+              </div>
+              <div class="stats-number" id="teacher-count">50+</div>
+              <div class="stats-label">Qualified Teachers</div>
+            </div>
+          </div>
+
+          <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+            <div class="stats-card">
+              <div class="stats-icon">
+                <i class="fas fa-school"></i>
+              </div>
+              <div class="stats-number" id="campus-count">4</div>
+              <div class="stats-label">Modern Campuses</div>
+            </div>
+          </div>
+
+          <div class="col-md-3" data-aos="fade-up" data-aos-delay="400">
+            <div class="stats-card">
+              <div class="stats-icon">
+                <i class="fas fa-history"></i>
+              </div>
+              <div class="stats-number" id="years-count">15+</div>
+              <div class="stats-label">Years of Excellence</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="cta-shape cta-shape-1"></div>
+      <div class="cta-shape cta-shape-2"></div>
+
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="cta-content" data-aos="fade-up">
+              <div class="row align-items-center">
+                <div class="col-lg-8 mb-4 mb-lg-0">
+                  <h2 class="cta-title">
+                    Ready to Experience the Target Advantage?
+                  </h2>
+                  <p class="cta-text">
+                    Schedule a campus visit to see firsthand what makes Target
+                    International School the ideal choice for your child's
+                    education.
+                  </p>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                  <a href="contact.html" class="btn btn-accent btn-lg"
+                    >Contact Us Today</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <img
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/photo_2023-05-20_09-53-30.jpg-GCQjI1B1EaGRAwA64nGla6FE3P6aAg.jpeg"
+              alt="Target International School Logo"
+              height="60"
+              class="mb-3"
+            />
+            <p>
+              Target International School provides quality education with a
+              focus on Business and IT, preparing students for successful
+              international university admissions.
+            </p>
+            <div class="social-links mt-3">
+              <a href="#" class="social-link"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="social-link"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-link"
+                ><i class="fab fa-telegram"></i
+              ></a>
+              <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+          <div class="col-md-4 col-lg-2">
+            <h5 class="footer-heading">Quick Links</h5>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="academics.html">Academics</a></li>
+              <li><a href="student-life.html">Student Life</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4 col-lg-2">
+            <h5 class="footer-heading">Programs</h5>
+            <ul class="footer-links">
+              <li><a href="academics.html#it">IT Education</a></li>
+              <li><a href="academics.html#business">Business Studies</a></li>
+              <li><a href="academics.html#ielts">IELTS Preparation</a></li>
+              <li><a href="academics.html#sat">SAT Preparation</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4 col-lg-4">
+            <h5 class="footer-heading">Contact Us</h5>
+            <address class="mb-0">
+              <p>
+                <i class="fas fa-map-marker-alt me-2"></i> 123 Education Street,
+                Tashkent, Uzbekistan
+              </p>
+              <p><i class="fas fa-phone me-2"></i> +998 71 123 4567</p>
+              <p><i class="fas fa-envelope me-2"></i> info@targetschool.uz</p>
+            </address>
+          </div>
+        </div>
+        <hr class="mt-4 mb-3" />
+        <div class="row">
+          <div class="col-md-6">
+            <p class="mb-md-0">
+              &copy; 2023 Target International School. All Rights Reserved.
+            </p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <ul class="footer-bottom-links">
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" aria-label="Back to top">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    <script>
+      // Initialize AOS animation library
+      AOS.init({
+        duration: 800,
+        easing: "ease-in-out",
+        once: true,
+        mirror: false,
+      });
+
+      // Add custom animations for hero section
+      document.addEventListener("DOMContentLoaded", function () {
+        // Custom animation keyframes
+        const style = document.createElement("style");
+        style.textContent = `
+                @keyframes fadeInUp {
+                    from {
+                        opacity: 0;
+                        transform: translateY(20px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+                
+                @keyframes float {
+                    0% {
+                        transform: translateY(0px);
+                    }
+                    50% {
+                        transform: translateY(-20px);
+                    }
+                    100% {
+                        transform: translateY(0px);
+                    }
+                }
+                
+                @keyframes rotate {
+                    from {
+                        transform: rotate(0deg);
+                    }
+                    to {
+                        transform: rotate(360deg);
+                    }
+                }
+                
+                @keyframes pulse {
+                    0% {
+                        transform: scale(1);
+                    }
+                    50% {
+                        transform: scale(1.1);
+                    }
+                    100% {
+                        transform: scale(1);
+                    }
+                }
+            `;
+        document.head.appendChild(style);
+
+        // Animated counters
+        const animateCounter = (element, target, prefix = "", suffix = "") => {
+          let current = 0;
+          const increment = target / 100;
+          const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+              current = target;
+              clearInterval(timer);
+            }
+            element.textContent = prefix + Math.floor(current) + suffix;
+          }, 20);
+        };
+
+        // Create intersection observer for counters
+        const counterObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const element = entry.target;
+                let target = parseFloat(element.textContent);
+                let prefix = "";
+                let suffix = "";
+
+                if (element.textContent.includes("+")) {
+                  suffix = "+";
+                  target = parseFloat(element.textContent.replace("+", ""));
+                }
+
+                animateCounter(element, target, prefix, suffix);
+                counterObserver.unobserve(element);
+              }
+            });
+          },
+          { threshold: 0.5 }
+        );
+
+        // Observe all counter elements
+        document.querySelectorAll(".stats-number").forEach((counter) => {
+          counterObserver.observe(counter);
+        });
+      });
+    </script>
+  </body>
+</html>
+
+<Actions>
+  <Action
+    name="Create a gallery page"
+    description="Add a dedicated photo gallery showcasing school events and facilities"
+  />
+  <Action
+    name="Add an admissions page"
+    description="Create a detailed admissions process page with application forms"
+  />
+  <Action
+    name="Implement a news/blog section"
+    description="Add a news section to share school updates and achievements"
+  />
+  <Action
+    name="Create a faculty page"
+    description="Showcase the school's teachers and staff with profiles"
+  />
+  <Action
+    name="Add multilingual functionality"
+    description="Implement language switching for Russian and Uzbek versions"
+  />
+</Actions>

@@ -1,0 +1,1600 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-translate="student-life.page-title">
+      Student Life - Target International School
+    </title>
+    <meta
+      name="description"
+      content="Experience the vibrant student life at Target International School in Tashkent, Uzbekistan - clubs, activities, events, and more."
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <style>
+      /* Page-specific styles */
+      .parallax-section {
+        position: relative;
+        height: 500px;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow: hidden;
+      }
+
+      .parallax-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: white;
+        z-index: 2;
+        width: 80%;
+      }
+
+      .parallax-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 45, 98, 0.7);
+        z-index: 1;
+      }
+
+      .activity-card {
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: all 0.5s ease;
+        height: 100%;
+      }
+
+      .activity-card:hover {
+        transform: translateY(-15px) scale(1.02);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+      }
+
+      .activity-image {
+        height: 250px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .activity-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.8s ease;
+      }
+
+      .activity-card:hover .activity-image img {
+        transform: scale(1.1);
+      }
+
+      .activity-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to top, rgba(0, 45, 98, 0.8), transparent);
+        opacity: 0;
+        transition: opacity 0.5s ease;
+      }
+
+      .activity-card:hover .activity-overlay {
+        opacity: 1;
+      }
+
+      .activity-content {
+        padding: 1.5rem;
+        position: relative;
+        z-index: 2;
+      }
+
+      .activity-icon {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        background-color: var(--accent-color);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8rem;
+        position: absolute;
+        top: -35px;
+        right: 20px;
+        box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .activity-card:hover .activity-icon {
+        transform: rotate(360deg);
+      }
+
+      .student-quote {
+        position: relative;
+        padding: 2rem;
+        border-radius: 15px;
+        background: linear-gradient(
+          135deg,
+          var(--primary-color) 0%,
+          var(--primary-dark) 100%
+        );
+        color: white;
+        margin-bottom: 3rem;
+      }
+
+      .student-quote::before {
+        content: '"';
+        position: absolute;
+        top: -30px;
+        left: 20px;
+        font-size: 100px;
+        color: rgba(255, 255, 255, 0.2);
+        font-family: Georgia, serif;
+      }
+
+      .student-quote::after {
+        content: "";
+        position: absolute;
+        bottom: -20px;
+        left: 50px;
+        width: 0;
+        height: 0;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        border-top: 20px solid var(--primary-dark);
+      }
+
+      .student-info {
+        display: flex;
+        align-items: center;
+        margin-left: 50px;
+      }
+
+      .student-image {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 15px;
+        border: 3px solid var(--primary-color);
+      }
+
+      .student-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .timeline {
+        position: relative;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .timeline::after {
+        content: "";
+        position: absolute;
+        width: 6px;
+        background-color: var(--accent-color);
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -3px;
+      }
+
+      .timeline-container {
+        padding: 10px 40px;
+        position: relative;
+        background-color: inherit;
+        width: 50%;
+      }
+
+      .timeline-container::after {
+        content: "";
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        right: -13px;
+        background-color: white;
+        border: 4px solid var(--accent-color);
+        top: 15px;
+        border-radius: 50%;
+        z-index: 1;
+      }
+
+      .left {
+        left: 0;
+      }
+
+      .right {
+        left: 50%;
+      }
+
+      .left::before {
+        content: " ";
+        height: 0;
+        position: absolute;
+        top: 22px;
+        width: 0;
+        z-index: 1;
+        right: 30px;
+        border: medium solid var(--primary-color);
+        border-width: 10px 0 10px 10px;
+        border-color: transparent transparent transparent var(--primary-color);
+      }
+
+      .right::before {
+        content: " ";
+        height: 0;
+        position: absolute;
+        top: 22px;
+        width: 0;
+        z-index: 1;
+        left: 30px;
+        border: medium solid var(--primary-color);
+        border-width: 10px 10px 10px 0;
+        border-color: transparent var(--primary-color) transparent transparent;
+      }
+
+      .right::after {
+        left: -12px;
+      }
+
+      .timeline-content {
+        padding: 20px 30px;
+        background-color: white;
+        position: relative;
+        border-radius: 6px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .timeline-content h3 {
+        color: var(--primary-color);
+      }
+
+      .timeline-date {
+        display: inline-block;
+        padding: 5px 15px;
+        background-color: var(--accent-color);
+        color: white;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+      }
+
+      .gallery-container {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+      }
+
+      .gallery-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        margin-bottom: 30px;
+        cursor: pointer;
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .gallery-item:hover img {
+        transform: scale(1.1);
+      }
+
+      .gallery-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to top, rgba(0, 45, 98, 0.8), transparent);
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+      }
+
+      .gallery-item:hover .gallery-overlay {
+        opacity: 1;
+      }
+
+      .gallery-icon {
+        font-size: 2rem;
+        transform: scale(0);
+        transition: transform 0.3s ease;
+      }
+
+      .gallery-item:hover .gallery-icon {
+        transform: scale(1);
+      }
+
+      .swiper-container {
+        width: 100%;
+        padding-top: 50px;
+        padding-bottom: 50px;
+      }
+
+      .swiper-slide {
+        background-position: center;
+        background-size: cover;
+        width: 300px;
+        height: 400px;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .club-card {
+        position: relative;
+        overflow: hidden;
+        border-radius: 15px;
+        margin-bottom: 30px;
+        height: 300px;
+      }
+
+      .club-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        transition: transform 0.5s ease;
+      }
+
+      .club-card:hover .club-bg {
+        transform: scale(1.1);
+      }
+
+      .club-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          to top,
+          rgba(0, 45, 98, 0.9),
+          rgba(0, 45, 98, 0.5)
+        );
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 1.5rem;
+        color: white;
+      }
+
+      .club-title {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        transform: translateY(20px);
+        opacity: 0;
+        transition: all 0.3s ease;
+      }
+
+      .club-desc {
+        transform: translateY(20px);
+        opacity: 0;
+        transition: all 0.3s ease;
+        transition-delay: 0.1s;
+      }
+
+      .club-card:hover .club-title,
+      .club-card:hover .club-desc {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      .club-icon {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: var(--accent-color);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        transform: scale(0);
+        transition: transform 0.3s ease;
+      }
+
+      .club-card:hover .club-icon {
+        transform: scale(1);
+      }
+
+      @media screen and (max-width: 768px) {
+        .timeline::after {
+          left: 31px;
+        }
+
+        .timeline-container {
+          width: 100%;
+          padding-left: 70px;
+          padding-right: 25px;
+        }
+
+        .timeline-container::before {
+          left: 60px;
+          border: medium solid var(--primary-color);
+          border-width: 10px 10px 10px 0;
+          border-color: transparent var(--primary-color) transparent transparent;
+        }
+
+        .left::after,
+        .right::after {
+          left: 18px;
+        }
+
+        .right {
+          left: 0%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Language Selector -->
+    <div class="language-selector">
+      <div class="container">
+        <div class="d-flex justify-content-end py-1">
+          <a href="#" class="lang-link active" data-lang="en">EN</a>
+          <a href="#" class="lang-link" data-lang="ru">RU</a>
+          <a href="#" class="lang-link" data-lang="uz">UZ</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="sticky-top">
+      <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <img
+              src="./img/article-original (1).png"
+              alt="Target International School Logo"
+              height="60"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html" data-translate="nav.home"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html" data-translate="nav.about"
+                  >About Us</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  href="student-life.html"
+                  data-translate="nav.student-life"
+                  >Student Life</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="academics.html"
+                  data-translate="nav.academics"
+                  >Academics</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="vision.html"
+                  data-translate="nav.vision"
+                  >Our Vision</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="advantages.html"
+                  data-translate="nav.advantages"
+                  >Our Advantages</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="results.html"
+                  data-translate="nav.results"
+                  >Results</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="dormitory.html"
+                  data-translate="nav.dormitory"
+                  >Dormitory</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="contact.html"
+                  data-translate="nav.contact"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Page Banner -->
+    <section class="page-banner">
+      <div class="container-fluid p-0">
+        <div class="banner-image position-relative">
+          <img
+            src="./img/student-life.png"
+            alt="Student Life at Target International School"
+            class="w-100"
+          />
+          <div
+            class="banner-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
+          >
+            <div class="container">
+              <h1
+                class="text-white mb-3"
+                data-aos="fade-right"
+                data-translate="student-life.hero-title"
+              >
+                Vibrant Student Community
+              </h1>
+              <p
+                class="lead text-white mb-0"
+                data-aos="fade-right"
+                data-aos-delay="200"
+                data-translate="student-life.hero-subtitle"
+              >
+                Experience a rich and diverse student life at Target
+                International School
+              </p>
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+                    <a
+                      href="index.html"
+                      class="text-white"
+                      data-translate="nav.home"
+                      >Home</a
+                    >
+                  </li>
+                  <li
+                    class="breadcrumb-item active text-white"
+                    aria-current="page"
+                    data-translate="nav.student-life"
+                  >
+                    Student Life
+                  </li>
+                </ol>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Activities Section -->
+    <section class="activities-section py-5">
+      <div class="container">
+        <h2
+          class="section-title text-center mb-5"
+          data-aos="fade-up"
+          data-translate="student-life.activities-title"
+        >
+          Student Activities
+        </h2>
+        <p
+          class="text-center mb-5"
+          data-translate="student-life.activities-desc"
+        >
+          Explore our wide range of extracurricular activities designed to
+          develop well-rounded individuals
+        </p>
+        <div class="row g-4">
+          <!-- Clubs & Organizations -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up">
+            <div class="activity-card">
+              <div class="activity-image">
+                <img src="./img/clubs.jpg" alt="Clubs and Organizations" />
+                <div class="activity-overlay"></div>
+              </div>
+              <div class="activity-content">
+                <div class="activity-icon">
+                  <i class="fas fa-users"></i>
+                </div>
+                <h3 class="h5 mb-3" data-translate="student-life.clubs-title">
+                  Clubs & Organizations
+                </h3>
+                <p data-translate="student-life.clubs-desc">
+                  Join student-led clubs that match your interests and passions
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Events & Celebrations -->
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="activity-card">
+              <div class="activity-image">
+                <img src="./img/fair.png" alt="Business events" />
+                <div class="activity-overlay"></div>
+              </div>
+              <div class="activity-content">
+                <div class="activity-icon">
+                  <i class="fas fa-calendar-alt"></i>
+                </div>
+                <h3 class="h5 mb-3" data-translate="student-life.events-title">
+                  Business Events
+                </h3>
+                <p data-translate="student-life.events-desc">
+                  Participate in business-related events, developing financial
+                  literacy skills.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sports & Athletics -->
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="activity-card">
+              <div class="activity-image">
+                <img src="./img/sports.jpg" alt="Sports and Athletics" />
+                <div class="activity-overlay"></div>
+              </div>
+              <div class="activity-content">
+                <div class="activity-icon">
+                  <i class="fas fa-basketball-ball"></i>
+                </div>
+                <h3 class="h5 mb-3" data-translate="student-life.sports-title">
+                  Sports & Athletics
+                </h3>
+                <p data-translate="student-life.sports-desc">
+                  Stay active and healthy through our comprehensive sports
+                  programs
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Arts & Culture -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up">
+            <div class="activity-card">
+              <div class="activity-image">
+                <img src="./img/xitoy.jpg" alt="Arts and Culture" />
+                <div class="activity-overlay"></div>
+              </div>
+              <div class="activity-content">
+                <div class="activity-icon">
+                  <i class="fas fa-palette"></i>
+                </div>
+                <h3 class="h5 mb-3" data-translate="student-life.arts-title">
+                  Arts & Culture
+                </h3>
+                <p data-translate="student-life.arts-desc">
+                  Express yourself through music, drama, visual arts, and
+                  cultural activities
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Leadership Development -->
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="activity-card">
+              <div class="activity-image">
+                <img src="./img/zakovat.png" alt="Leadership Development" />
+                <div class="activity-overlay"></div>
+              </div>
+              <div class="activity-content">
+                <div class="activity-icon">
+                  <i class="fas fa-star"></i>
+                </div>
+                <h3
+                  class="h5 mb-3"
+                  data-translate="student-life.leadership-title"
+                >
+                  Intellectual Development
+                </h3>
+                <p data-translate="student-life.leadership-desc">
+                  Participate in competitions and events that enhance your
+                  critical thinking and problem-solving skills
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Community Service -->
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="activity-card">
+              <div class="activity-image">
+                <img src="./img/community.png" alt="Community Service" />
+                <div class="activity-overlay"></div>
+              </div>
+              <div class="activity-content">
+                <div class="activity-icon">
+                  <i class="fas fa-hands-helping"></i>
+                </div>
+                <h3
+                  class="h5 mb-3"
+                  data-translate="student-life.community-title"
+                >
+                  Community Service
+                </h3>
+                <p data-translate="student-life.community-desc">
+                  Make a difference in the local community through volunteer
+                  work
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Student Testimonial -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2
+              class="section-title text-center mb-5"
+              data-aos="fade-up"
+              data-translate="student-life.testimonials-title"
+            >
+              Student Experiences
+            </h2>
+            <div class="student-quote" data-aos="zoom-in">
+              <p
+                class="mb-0 fs-5"
+                data-translate="student-life.testimonials-desc"
+              >
+                "The student life at Target International School is what makes
+                it truly special. I've discovered talents I never knew I had
+                through the robotics club, made lifelong friends during our
+                community service projects, and gained confidence through
+                leadership opportunities. These experiences have shaped me just
+                as much as my academic studies."
+              </p>
+            </div>
+            <div class="text-end" data-aos="fade-up" data-aos-delay="200">
+              <h5 class="mb-0" data-translate="student-life.testimonial-name">
+                Aziza Karimova
+              </h5>
+              <p
+                class="text-muted mb-0"
+                data-translate="student-life.testimonial-grade"
+              >
+                Grade 11 Student
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Clubs & Activities -->
+    <section id="clubs" class="py-5">
+      <div class="container">
+        <h2
+          class="section-title text-center mb-5"
+          data-aos="fade-up"
+          data-translate="student-life.clubs-title"
+        >
+          Clubs & Activities
+        </h2>
+        <p class="text-center mb-5" data-translate="student-life.clubs-desc">
+          Join student-led clubs that match your interests and passions
+        </p>
+        <div class="row g-4">
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="club-card">
+              <div
+                class="club-bg"
+                style="background-image: url('./img/robo.jpg')"
+              ></div>
+              <div class="club-overlay">
+                <div class="club-icon">
+                  <i class="fas fa-robot"></i>
+                </div>
+                <h3
+                  class="club-title"
+                  data-translate="student-life.club-robotics-title"
+                >
+                  Robotics Club
+                </h3>
+                <p
+                  class="club-desc"
+                  data-translate="student-life.club-robotics-desc"
+                >
+                  Design, build, and program robots while developing
+                  problem-solving skills and teamwork.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="club-card">
+              <div
+                class="club-bg"
+                style="background-image: url('./img/debate.png')"
+              ></div>
+              <div class="club-overlay">
+                <div class="club-icon">
+                  <i class="fas fa-comments"></i>
+                </div>
+                <h3
+                  class="club-title"
+                  data-translate="student-life.club-debate-title"
+                >
+                  Debate Club
+                </h3>
+                <p
+                  class="club-desc"
+                  data-translate="student-life.club-debate-desc"
+                >
+                  Develop critical thinking, public speaking, and persuasive
+                  communication skills.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="club-card">
+              <div
+                class="club-bg"
+                style="background-image: url('./img/business.png')"
+              ></div>
+              <div class="club-overlay">
+                <div class="club-icon">
+                  <i class="fas fa-palette"></i>
+                </div>
+                <h3
+                  class="club-title"
+                  data-translate="student-life.club-art-title"
+                >
+                  Business Club
+                </h3>
+                <p
+                  class="club-desc"
+                  data-translate="student-life.club-art-desc"
+                >
+                  Explore entrepreneurship, marketing, and finance through
+                  hands-on projects and competitions.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div class="club-card">
+              <div
+                class="club-bg"
+                style="background-image: url('./img/self-growth.png')"
+              ></div>
+              <div class="club-overlay">
+                <div class="club-icon">
+                  <i class="fas fa-lightbulb"></i>
+                </div>
+                <h3
+                  class="club-title"
+                  data-translate="student-life.club-entrepreneurship-title"
+                >
+                  Self-development club
+                </h3>
+                <p
+                  class="club-desc"
+                  data-translate="student-life.club-entrepreneurship-desc"
+                >
+                  Engage in personal growth activities, workshops, and
+                  discussions to enhance self-awareness and confidence.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="500"
+          >
+            <div class="club-card">
+              <div
+                class="club-bg"
+                style="background-image: url('assets/music-club.jpg')"
+              ></div>
+              <div class="club-overlay">
+                <div class="club-icon">
+                  <i class="fas fa-music"></i>
+                </div>
+                <h3
+                  class="club-title"
+                  data-translate="student-life.club-music-title"
+                >
+                  Music Club
+                </h3>
+                <p
+                  class="club-desc"
+                  data-translate="student-life.club-music-desc"
+                >
+                  Explore musical talents through instrumental practice, vocal
+                  training, and performances.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="600"
+          >
+            <div class="club-card">
+              <div
+                class="club-bg"
+                style="background-image: url('./img/codinglcub.png')"
+              ></div>
+              <div class="club-overlay">
+                <div class="club-icon">
+                  <i class="fas fa-code"></i>
+                </div>
+                <h3
+                  class="club-title"
+                  data-translate="student-life.club-coding-title"
+                >
+                  Coding Club
+                </h3>
+                <p
+                  class="club-desc"
+                  data-translate="student-life.club-coding-desc"
+                >
+                  Learn programming languages and develop applications,
+                  websites, and software solutions.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sports Section -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <h2
+          class="section-title text-center mb-5"
+          data-aos="fade-up"
+          data-translate="student-life.sports-title"
+        >
+          Sports & Athletics
+        </h2>
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+            <p class="lead" data-translate="student-life.sports-lead">
+              Physical education is an integral part of our holistic approach to
+              education.
+            </p>
+            <p data-translate="student-life.sports-desc">
+              Our sports program promotes physical fitness, teamwork,
+              discipline, and sportsmanship. Students have access to modern
+              facilities and professional coaching in a variety of sports.
+            </p>
+            <div class="row g-3 mt-4">
+              <div class="col-6 col-md-4">
+                <div
+                  class="text-center p-3 rounded bg-white shadow-sm"
+                  data-aos="zoom-in"
+                  data-aos-delay="100"
+                >
+                  <i class="fas fa-futbol fa-2x text-accent mb-3"></i>
+                  <h5 class="mb-0" data-translate="student-life.sport-football">
+                    Football
+                  </h5>
+                </div>
+              </div>
+              <div class="col-6 col-md-4">
+                <div
+                  class="text-center p-3 rounded bg-white shadow-sm"
+                  data-aos="zoom-in"
+                  data-aos-delay="200"
+                >
+                  <i class="fas fa-basketball-ball fa-2x text-accent mb-3"></i>
+                  <h5
+                    class="mb-0"
+                    data-translate="student-life.sport-basketball"
+                  >
+                    Basketball
+                  </h5>
+                </div>
+              </div>
+              <div class="col-6 col-md-4">
+                <div
+                  class="text-center p-3 rounded bg-white shadow-sm"
+                  data-aos="zoom-in"
+                  data-aos-delay="300"
+                >
+                  <i class="fas fa-volleyball-ball fa-2x text-accent mb-3"></i>
+                  <h5
+                    class="mb-0"
+                    data-translate="student-life.sport-volleyball"
+                  >
+                    Volleyball
+                  </h5>
+                </div>
+              </div>
+              <div class="col-6 col-md-4">
+                <div
+                  class="text-center p-3 rounded bg-white shadow-sm"
+                  data-aos="zoom-in"
+                  data-aos-delay="400"
+                >
+                  <i class="fas fa-table-tennis fa-2x text-accent mb-3"></i>
+                  <h5
+                    class="mb-0"
+                    data-translate="student-life.sport-tabletennis"
+                  >
+                    Table Tennis
+                  </h5>
+                </div>
+              </div>
+              <div class="col-6 col-md-4">
+                <div
+                  class="text-center p-3 rounded bg-white shadow-sm"
+                  data-aos="zoom-in"
+                  data-aos-delay="500"
+                >
+                  <i class="fas fa-running fa-2x text-accent mb-3"></i>
+                  <h5
+                    class="mb-0"
+                    data-translate="student-life.sport-athletics"
+                  >
+                    Karate
+                  </h5>
+                </div>
+              </div>
+              <div class="col-6 col-md-4">
+                <div
+                  class="text-center p-3 rounded bg-white shadow-sm"
+                  data-aos="zoom-in"
+                  data-aos-delay="600"
+                >
+                  <i class="fas fa-chess fa-2x text-accent mb-3"></i>
+                  <h5 class="mb-0" data-translate="student-life.sport-chess">
+                    Chess
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="./img/football.jpg" alt="Football" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./img/chess.jpg" alt="Basketball" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./img/voleyball.jpg" alt="Volleyball" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./img/karate.png " alt="Athletics" />
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Events Timeline -->
+    <section id="events" class="py-5">
+      <div class="container">
+        <h2
+          class="section-title text-center mb-5"
+          data-aos="fade-up"
+          data-translate="student-life.events-title"
+        >
+          Annual Events & Traditions
+        </h2>
+        <div class="timeline">
+          <div class="timeline-container left" data-aos="fade-right">
+            <div class="timeline-content">
+              <span
+                class="timeline-date"
+                data-translate="student-life.event-september"
+                >September</span
+              >
+              <h3 data-translate="student-life.event-welcome-title">
+                Welcome Week
+              </h3>
+              <p data-translate="student-life.event-welcome-desc">
+                A week of orientation activities, team-building exercises, and
+                cultural performances to welcome new and returning students.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-container right" data-aos="fade-left">
+            <div class="timeline-content">
+              <span
+                class="timeline-date"
+                data-translate="student-life.event-october"
+                >October</span
+              >
+              <h3 data-translate="student-life.event-culture-title">
+                International Culture Festival
+              </h3>
+              <p data-translate="student-life.event-culture-desc">
+                A celebration of global diversity featuring food, music, dance,
+                and traditions from around the world.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-container left" data-aos="fade-right">
+            <div class="timeline-content">
+              <span
+                class="timeline-date"
+                data-translate="student-life.event-december"
+                >December</span
+              >
+              <h3 data-translate="student-life.event-winter-title">
+                Winter Showcase
+              </h3>
+              <p data-translate="student-life.event-winter-desc">
+                Students showcase their talents in music, drama, and visual arts
+                in this end-of-semester celebration.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-container right" data-aos="fade-left">
+            <div class="timeline-content">
+              <span
+                class="timeline-date"
+                data-translate="student-life.event-february"
+                >February</span
+              >
+              <h3 data-translate="student-life.event-science-title">
+                Science & Technology Fair
+              </h3>
+              <p data-translate="student-life.event-science-desc">
+                An exhibition of student projects in science, technology,
+                engineering, and mathematics.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-container left" data-aos="fade-right">
+            <div class="timeline-content">
+              <span
+                class="timeline-date"
+                data-translate="student-life.event-april"
+                >April</span
+              >
+              <h3 data-translate="student-life.event-business-title">
+                Business Innovation Competition
+              </h3>
+              <p data-translate="student-life.event-business-desc">
+                Students present their business ideas and entrepreneurial
+                projects to a panel of judges from the business community.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-container right" data-aos="fade-left">
+            <div class="timeline-content">
+              <span
+                class="timeline-date"
+                data-translate="student-life.event-may"
+                >May</span
+              >
+              <h3 data-translate="student-life.event-sports-title">
+                Sports Day
+              </h3>
+              <p data-translate="student-life.event-sports-desc">
+                A day of athletic competitions, team sports, and physical
+                activities for students of all ages.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Student Life Gallery -->
+    <section class="py-5">
+      <div class="container">
+        <h2 class="section-title text-center mb-5" data-aos="fade-up">
+          Life at Target International School
+        </h2>
+        <div class="row g-4">
+          <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="gallery-item">
+              <img src="./img/outside-istirohat-yard.jpg" alt="Student Life" />
+              <div class="gallery-overlay">
+                <div class="gallery-icon">
+                  <i class="fas fa-search-plus"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="gallery-item">
+              <img src="./img/chess.jpg" alt="Student Life" />
+              <div class="gallery-overlay">
+                <div class="gallery-icon">
+                  <i class="fas fa-search-plus"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
+            <div class="gallery-item">
+              <img src="./img/tinchlik.webp" alt="Student Life" />
+              <div class="gallery-overlay">
+                <div class="gallery-icon">
+                  <i class="fas fa-search-plus"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6" data-aos="zoom-in" data-aos-delay="400">
+            <div class="gallery-item">
+              <img src="./img/robo.jpg" alt="Student Life" />
+              <div class="gallery-overlay">
+                <div class="gallery-icon">
+                  <i class="fas fa-search-plus"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6" data-aos="zoom-in" data-aos-delay="500">
+            <div class="gallery-item">
+              <img src="./img/community.png" alt="Student Life" />
+              <div class="gallery-overlay">
+                <div class="gallery-icon">
+                  <i class="fas fa-search-plus"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <a
+            href="#"
+            class="btn btn-outline-accent"
+            data-aos="fade-up"
+            data-aos-delay="600"
+            >View Full Gallery</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Student Leadership -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <h2 class="section-title text-center mb-5" data-aos="fade-up">
+          Student Leadership
+        </h2>
+        <div class="row align-items-center">
+          <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0" data-aos="fade-left">
+            <h3>Student Council</h3>
+            <p class="lead">Developing tomorrow's leaders today.</p>
+            <p>
+              Our Student Council provides a platform for students to develop
+              leadership skills, voice their opinions, and contribute to school
+              governance. Council members are elected by their peers and work
+              closely with faculty to organize events, address student concerns,
+              and implement initiatives that enhance the school community.
+            </p>
+            <p>
+              Through their involvement in the Student Council, students learn
+              valuable skills in leadership, teamwork, communication, and
+              project management that prepare them for future roles in society.
+            </p>
+            <a href="#" class="btn btn-outline-primary mt-3"
+              >Meet Our Student Leaders</a
+            >
+          </div>
+          <div
+            class="col-lg-6 order-lg-1"
+            data-aos="fade-right"
+            data-aos-delay="200"
+          >
+            <img
+              src="./img/Feruza-Sotiboldiyeva.png"
+              alt="Student Council"
+              class="img-fluid rounded shadow"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section cta-accent py-5 text-white text-center">
+      <div class="container">
+        <h2 class="mb-4" data-aos="fade-up">
+          Experience Student Life at Target International School
+        </h2>
+        <p class="lead mb-4" data-aos="fade-up" data-aos-delay="100">
+          Join our vibrant community and discover the perfect balance of
+          academic excellence and enriching experiences.
+        </p>
+        <div
+          class="d-flex justify-content-center gap-3 flex-wrap"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <a href="contact.html" class="btn btn-light btn-lg"
+            >Schedule a Visit</a
+          >
+          <a href="about.html" class="btn btn-outline-light btn-lg"
+            >Learn More</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <img
+              src="./img/logo-blue.png"
+              alt="Target International School Logo"
+              height="60"
+              class="mb-4"
+            />
+            <p>
+              Target International School provides quality education with a
+              focus on Business and IT, preparing students for successful
+              international university admissions.
+            </p>
+            <div class="social-links mt-3">
+              <a href="#" class="social-link"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="social-link"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-link"
+                ><i class="fab fa-telegram"></i
+              ></a>
+              <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+          <div class="col-md-4 col-lg-2">
+            <h5 class="footer-heading">Quick Links</h5>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="academics.html">Academics</a></li>
+              <li><a href="student-life.html">Student Life</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4 col-lg-2">
+            <h5 class="footer-heading">Programs</h5>
+            <ul class="footer-links">
+              <li><a href="academics.html#it">IT Education</a></li>
+              <li><a href="academics.html#business">Business Studies</a></li>
+              <li><a href="academics.html#ielts">IELTS Preparation</a></li>
+              <li><a href="academics.html#sat">SAT Preparation</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4 col-lg-4">
+            <h5 class="footer-heading">Contact Us</h5>
+            <address class="mb-0">
+              <p>
+                <i class="fas fa-map-marker-alt me-2"></i> 123 Education Street,
+                Tashkent, Uzbekistan
+              </p>
+              <p><i class="fas fa-phone me-2"></i> +998 71 123 4567</p>
+              <p><i class="fas fa-envelope me-2"></i> info@targetschool.uz</p>
+            </address>
+          </div>
+        </div>
+        <hr class="mt-4 mb-3" />
+        <div class="row">
+          <div class="col-md-6">
+            <p class="mb-md-0">
+              &copy; 2023 Target International School. All Rights Reserved.
+            </p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <ul class="footer-bottom-links">
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" aria-label="Back to top">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <!-- Language System -->
+    <script src="js/languages.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    <script>
+      // Initialize AOS animation library
+      AOS.init({
+        duration: 800,
+        easing: "ease-in-out",
+        once: true,
+        mirror: false,
+      });
+
+      var swiper = new Swiper(".swiper-container", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        coverflowEffect: {
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+        },
+      });
+
+      // Gallery lightbox functionality
+      document.querySelectorAll(".gallery-item").forEach((item) => {
+        item.addEventListener("click", function () {
+          const imgSrc = this.querySelector("img").getAttribute("src");
+          const lightbox = document.createElement("div");
+          lightbox.id = "lightbox";
+          lightbox.style.position = "fixed";
+          lightbox.style.top = "0";
+          lightbox.style.left = "0";
+          lightbox.style.width = "100%";
+          lightbox.style.height = "100%";
+          lightbox.style.backgroundColor = "rgba(0, 0, 0, 0.9)";
+          lightbox.style.display = "flex";
+          lightbox.style.alignItems = "center";
+          lightbox.style.justifyContent = "center";
+          lightbox.style.zIndex = "1050";
+
+          const img = document.createElement("img");
+          img.src = imgSrc;
+          img.style.maxHeight = "90%";
+          img.style.maxWidth = "90%";
+          img.style.borderRadius = "5px";
+
+          lightbox.appendChild(img);
+          document.body.appendChild(lightbox);
+
+          lightbox.addEventListener("click", function () {
+            document.body.removeChild(lightbox);
+          });
+        });
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const style = document.createElement("style");
+        style.textContent = `
+                @keyframes fadeInUp {
+                    from {
+                        opacity: 0;
+                        transform: translateY(20px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+            `;
+        document.head.appendChild(style);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-translate="dormitory.page-title">
+      Dormitory - Target International School
+    </title>
+    <meta
+      name="description"
+      content="Target International School dormitory provides comfortable living facilities with 4-time meal plan, study areas, and 24/7 security for students."
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css/performance-styles.css" />
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- Language Selector -->
+    <div class="language-selector">
+      <div class="container">
+        <div class="d-flex justify-content-end py-1">
+          <a href="#" class="lang-link active" data-lang="en">EN</a>
+          <a href="#" class="lang-link" data-lang="ru">RU</a>
+          <a href="#" class="lang-link" data-lang="uz">UZ</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="sticky-top">
+      <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <img
+              src="./img/article-original (1).png"
+              alt="Target International School Logo"
+              height="60"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html" data-translate="nav.home"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html" data-translate="nav.about"
+                  >About Us</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="student-life.html"
+                  data-translate="nav.student-life"
+                  >Student Life</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="academics.html"
+                  data-translate="nav.academics"
+                  >Academics</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="vision.html"
+                  data-translate="nav.vision"
+                  >Our Vision</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="advantages.html"
+                  data-translate="nav.advantages"
+                  >Our Advantages</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="results.html"
+                  data-translate="nav.results"
+                  >Results</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  href="dormitory.html"
+                  data-translate="nav.dormitory"
+                  >Dormitory</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="contact.html"
+                  data-translate="nav.contact"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section dormitory-hero">
+      <div class="container">
+        <div class="row align-items-center min-vh-100">
+          <div class="col-lg-6 animate-slide-left">
+            <h1
+              class="display-4 fw-bold text-white mb-4"
+              data-translate="dormitory.hero.title"
+            >
+              Comfortable Living, Focused Learning
+            </h1>
+            <p
+              class="lead text-white mb-4"
+              data-translate="dormitory.hero.description"
+            >
+              Our modern dormitory facilities provide a safe, comfortable, and
+              supportive environment for students to thrive academically and
+              socially.
+            </p>
+            <div class="d-flex gap-3">
+              <a
+                href="#facilities"
+                class="btn btn-accent btn-lg"
+                data-translate="dormitory.hero.explore-btn"
+              >
+                Explore Facilities
+              </a>
+              <a
+                href="#student-life"
+                class="btn btn-outline-light btn-lg"
+                data-translate="dormitory.hero.life-btn"
+              >
+                Student Life
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-6 animate-slide-right">
+            <div class="hero-image-container">
+              <img
+                src="./img/photo_11_2025-04-29_17-00-23.jpg"
+                alt="Dormitory Building"
+                class="img-fluid rounded shadow-lg"
+              />
+              <div class="hero-stats">
+                <div class="row text-center">
+                  <div class="col-4">
+                    <div class="stat-number">24/7</div>
+                    <div
+                      class="stat-label"
+                      data-translate="dormitory.stats.security"
+                    >
+                      Security
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="stat-number">4</div>
+                    <div
+                      class="stat-label"
+                      data-translate="dormitory.stats.meals"
+                    >
+                      Meals Daily
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="stat-number">100%</div>
+                    <div
+                      class="stat-label"
+                      data-translate="dormitory.stats.safety"
+                    >
+                      Safety
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section id="facilities" class="facilities-section py-5">
+      <div class="container">
+        <h2
+          class="section-title text-center mb-5"
+          data-translate="dormitory.facilities.title"
+          data-aos="fade-up"
+        >
+          Our Facilities
+        </h2>
+        <div class="row g-4">
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="facility-card">
+              <div class="facility-image">
+                <img
+                  src="./img/yotoqxona.jpg"
+                  alt="Comfortable Dormitory Rooms"
+                  class="img-fluid"
+                />
+                <div class="facility-overlay">
+                  <i class="fas fa-search-plus"></i>
+                </div>
+              </div>
+              <div class="facility-content">
+                <h3
+                  class="facility-title h5"
+                  data-translate="dormitory.facilities.rooms.title"
+                >
+                  Comfortable Rooms
+                </h3>
+                <p data-translate="dormitory.facilities.rooms.description">
+                  Spacious rooms with modern furniture, study desks, and storage
+                  space
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="facility-card">
+              <div class="facility-image">
+                <img
+                  src="./img/kitchen.png"
+                  alt="Dormitory Dining Area"
+                  class="img-fluid"
+                />
+                <div class="facility-overlay">
+                  <i class="fas fa-search-plus"></i>
+                </div>
+              </div>
+              <div class="facility-content">
+                <h3
+                  class="facility-title h5"
+                  data-translate="dormitory.facilities.dining.title"
+                >
+                  4-Time Meal Plan
+                </h3>
+                <p data-translate="dormitory.facilities.dining.description">
+                  Nutritious meals prepared by professional chefs, including
+                  breakfast, lunch, dinner, and evening snack
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Study Areas -->
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="facility-card">
+              <div class="facility-image">
+                <img
+                  src="./img/SELF-STUDY.jpg"
+                  alt="Study Areas"
+                  class="img-fluid"
+                />
+                <div class="facility-overlay">
+                  <i class="fas fa-search-plus"></i>
+                </div>
+              </div>
+              <div class="facility-content">
+                <h3 class="facility-title h5">Study Areas</h3>
+                <p>
+                  Quiet study rooms and common areas for group study sessions
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Recreation -->
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div class="facility-card">
+              <div class="facility-image">
+                <img
+                  src="./img/football.jpg"
+                  alt="Recreation Areas"
+                  class="img-fluid"
+                />
+                <div class="facility-overlay">
+                  <i class="fas fa-search-plus"></i>
+                </div>
+              </div>
+              <div class="facility-content">
+                <h3 class="facility-title h5">Recreation Areas</h3>
+                <p>TV lounge, game room, and outdoor sports facilities</p>
+              </div>
+            </div>
+          </div>
+          <!-- Laundry -->
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="500"
+          >
+            <div class="facility-card">
+              <div class="facility-image">
+                <img
+                  src="./img/laundry.jpg"
+                  alt="Laundry Services"
+                  class="img-fluid"
+                />
+                <div class="facility-overlay">
+                  <i class="fas fa-search-plus"></i>
+                </div>
+              </div>
+              <div class="facility-content">
+                <h3 class="facility-title h5">Laundry Services</h3>
+                <p>
+                  On-site laundry facilities with professional staff assistance
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Security -->
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="600"
+          >
+            <div class="facility-card">
+              <div class="facility-image">
+                <img
+                  src="./img/security.png"
+                  alt="24/7 Security"
+                  class="img-fluid"
+                />
+                <div class="facility-overlay">
+                  <i class="fas fa-search-plus"></i>
+                </div>
+              </div>
+              <div class="facility-content">
+                <h3 class="facility-title h5">24/7 Security</h3>
+                <p>Round-the-clock security personnel and CCTV surveillance</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    6
+    <!-- Meal Plan Section -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <h2 class="section-title text-center mb-5">Meal Plan</h2>
+        <div class="row g-4">
+          <div class="col-lg-6 animate-slide-left">
+            <div class="meal-plan-card">
+              <h3>Breakfast</h3>
+              <p>7:00 AM - 8:30 AM</p>
+              <ul class="meal-features">
+                <li>Fresh fruits and juices</li>
+                <li>Hot and cold cereals</li>
+                <li>Eggs and breakfast meats</li>
+                <li>Bread and pastries</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-6 animate-slide-right">
+            <div class="meal-plan-card">
+              <h3>Lunch</h3>
+              <p>12:00 PM - 1:30 PM</p>
+              <ul class="meal-features">
+                <li>Main course with protein</li>
+                <li>Vegetarian options</li>
+                <li>Fresh salad bar</li>
+                <li>Dessert and beverages</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-6 animate-slide-left">
+            <div class="meal-plan-card">
+              <h3>Dinner</h3>
+              <p>6:00 PM - 7:30 PM</p>
+              <ul class="meal-features">
+                <li>International cuisine</li>
+                <li>Daily specials</li>
+                <li>Soup and bread</li>
+                <li>Fresh fruit and dessert</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-6 animate-slide-right">
+            <div class="meal-plan-card">
+              <h3>Coffee break</h3>
+              <p>3.40 - 5.00 pm</p>
+              <ul class="meal-features">
+                <li>Light sandwiches</li>
+                <li>Fresh fruits</li>
+                <li>Milk and cookies</li>
+                <li>Hot beverages</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Student Life Section -->
+    <section id="student-life" class="py-5">
+      <div class="container">
+        <h2 class="section-title text-center mb-5" data-aos="fade-up">
+          Student Life in Dormitory
+        </h2>
+        <div class="row g-4">
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="life-card text-center">
+              <div class="life-card-icon">
+                <i class="fas fa-users-cog fa-3x text-primary"></i>
+              </div>
+              <h3 class="h5">Social Activities</h3>
+              <p>
+                Regular events and activities to foster community and friendship
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="life-card text-center">
+              <div class="life-card-icon">
+                <i class="fas fa-book-reader fa-3x text-primary"></i>
+              </div>
+              <h3 class="h5">Academic Support</h3>
+              <p>Study groups and peer tutoring programs</p>
+            </div>
+          </div>
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="life-card text-center">
+              <div class="life-card-icon">
+                <i class="fas fa-volleyball-ball fa-3x text-primary"></i>
+              </div>
+              <h3 class="h5">Recreation</h3>
+              <p>Sports, games, and entertainment facilities</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Safety & Security Section -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <h2 class="section-title text-center mb-5">Safety & Security</h2>
+        <div class="row g-4">
+          <div class="col-md-6 animate-slide-left">
+            <div class="security-card">
+              <i class="fas fa-user-shield"></i>
+              <h3>24/7 Security Personnel</h3>
+              <p>Trained security staff on duty at all times</p>
+            </div>
+          </div>
+          <div class="col-md-6 animate-slide-right">
+            <div class="security-card">
+              <i class="fas fa-camera"></i>
+              <h3>CCTV Surveillance</h3>
+              <p>Comprehensive camera coverage throughout the facility</p>
+            </div>
+          </div>
+          <div class="col-md-6 animate-slide-left">
+            <div class="security-card">
+              <i class="fas fa-door-closed"></i>
+              <h3>Access Control</h3>
+              <p>Secure entry system with key card access</p>
+            </div>
+          </div>
+          <div class="col-md-6 animate-slide-right">
+            <div class="security-card">
+              <i class="fas fa-first-aid"></i>
+              <h3>Medical Support</h3>
+              <p>On-call medical staff and first aid facilities</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4 mb-lg-0">
+            <h4 class="footer-heading">Contact Us</h4>
+            <ul class="footer-links">
+              <li>
+                <i class="fas fa-map-marker-alt me-2"></i> Tashkent, Uzbekistan
+              </li>
+              <li><i class="fas fa-phone me-2"></i> +998 XX XXX XX XX</li>
+              <li><i class="fas fa-envelope me-2"></i> info@targetschool.uz</li>
+            </ul>
+            <div class="social-links mt-4">
+              <a href="#" class="social-link"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="social-link"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-link"
+                ><i class="fab fa-telegram"></i
+              ></a>
+            </div>
+          </div>
+          <div class="col-lg-4 mb-4 mb-lg-0">
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="academics.html">Academics</a></li>
+              <li><a href="student-life.html">Student Life</a></li>
+              <li><a href="dormitory.html">Dormitory</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-4">
+            <h4 class="footer-heading">Newsletter</h4>
+            <p>Subscribe to our newsletter for updates and news.</p>
+            <form class="mt-3">
+              <div class="input-group">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Your email"
+                  required
+                />
+                <button class="btn btn-accent" type="submit">Subscribe</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <hr class="my-4" />
+        <div class="row">
+          <div class="col-md-6">
+            <p class="mb-0">
+              &copy; 2024 Target International School. All rights reserved.
+            </p>
+          </div>
+          <div class="col-md-6">
+            <ul class="footer-bottom-links">
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Language System -->
+    <script src="js/languages.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>

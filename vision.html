@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Vision - Target International School</title>
+    <meta
+      name="description"
+      content="Discover the vision and mission of Target International School in Tashkent, Uzbekistan - preparing future leaders through excellence in education."
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <style>
+      /* Page-specific styles */
+      .vision-hero {
+        position: relative;
+        height: 100vh;
+        overflow: hidden;
+        background-color: var(--primary-color);
+      }
+
+      .vision-hero-content {
+        position: relative;
+        z-index: 2;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .vision-hero-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        opacity: 0.3;
+      }
+
+      .vision-hero-title {
+        font-size: 5rem;
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        line-height: 1.1;
+      }
+
+      .vision-hero-subtitle {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        max-width: 700px;
+      }
+
+      .vision-card {
+        background-color: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+        height: 100%;
+        transition: all 0.5s ease;
+        position: relative;
+      }
+
+      .vision-card:hover {
+        transform: translateY(-15px);
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+      }
+
+      .vision-card-header {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 2rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .vision-card-header::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.1) 0%,
+          rgba(255, 255, 255, 0) 70%
+        );
+        transform: rotate(30deg);
+      }
+
+      .vision-card-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        transition: all 0.5s ease;
+      }
+
+      .vision-card:hover .vision-card-icon {
+        transform: scale(1.2) rotate(10deg);
+      }
+
+      .vision-card-body {
+        padding: 2rem;
+      }
+
+      .vision-card-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: var(--primary-color);
+      }
+
+      .vision-timeline {
+        position: relative;
+        padding: 3rem 0;
+      }
+
+      .vision-timeline::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 4px;
+        height: 100%;
+        background-color: var(--primary-color);
+      }
+
+      .vision-timeline-item {
+        position: relative;
+        margin-bottom: 4rem;
+      }
+
+      .vision-timeline-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .vision-timeline-content {
+        position: relative;
+        width: 45%;
+        padding: 2rem;
+        background-color: white;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      }
+
+      .vision-timeline-item:nth-child(odd) .vision-timeline-content {
+        margin-left: auto;
+      }
+
+      .vision-timeline-item:nth-child(even) .vision-timeline-content {
+        margin-right: auto;
+      }
+
+      .vision-timeline-content::before {
+        content: "";
+        position: absolute;
+        top: 20px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+      }
+
+      .vision-timeline-item:nth-child(odd) .vision-timeline-content::before {
+        right: 100%;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
+      }
+
+      .vision-timeline-item:nth-child(even) .vision-timeline-content::before {
+        left: 100%;
+        border-width: 10px 0 10px 10px;
+        border-color: transparent transparent transparent white;
+      }
+
+      .vision-timeline-dot {
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: var(--accent-color);
+        border: 5px solid white;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+      }
+
+      .vision-timeline-year {
+        position: absolute;
+        top: 20px;
+        font-weight: 700;
+        color: var(--primary-color);
+      }
+
+      .vision-timeline-item:nth-child(odd) .vision-timeline-year {
+        left: 55%;
+        margin-left: 20px;
+      }
+
+      .vision-timeline-item:nth-child(even) .vision-timeline-year {
+        right: 55%;
+        margin-right: 20px;
+      }
+
+      .vision-timeline-title {
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: var(--primary-color);
+      }
+
+      .vision-values {
+        position: relative;
+        padding: 5rem 0;
+        background-color: var(--secondary-color);
+        overflow: hidden;
+      }
+
+      .vision-values-shape {
+        position: absolute;
+        z-index: 0;
+      }
+
+      .vision-values-shape-1 {
+        top: -100px;
+        right: -100px;
+        width: 300px;
+        height: 300px;
+        background-color: var(--accent-color);
+        opacity: 0.05;
+        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+        animation: morphShape 15s ease-in-out infinite;
+      }
+
+      .vision-values-shape-2 {
+        bottom: -100px;
+        left: -100px;
+        width: 350px;
+        height: 350px;
+        background-color: var(--primary-color);
+        opacity: 0.05;
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        animation: morphShape 20s ease-in-out infinite alternate;
+      }
+
+      .vision-value-card {
+        background-color: white;
+        border-radius: 15px;
+        padding: 2rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        height: 100%;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .vision-value-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 5px;
+        height: 100%;
+        background-color: var(--accent-color);
+        transition: width 0.3s ease;
+      }
+
+      .vision-value-card:hover::before {
+        width: 100%;
+        opacity: 0.1;
+      }
+
+      .vision-value-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      .vision-value-icon {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        background-color: var(--primary-color);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+        transition: all 0.3s ease;
+      }
+
+      .vision-value-card:hover .vision-value-icon {
+        background-color: var(--accent-color);
+        transform: rotateY(180deg);
+      }
+
+      .vision-value-title {
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: var(--primary-color);
+      }
+
+      .vision-quote {
+        position: relative;
+        padding: 3rem;
+        background-color: var(--primary-color);
+        color: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+      }
+
+      .vision-quote::before {
+        content: '"';
+        position: absolute;
+        top: 0;
+        left: 20px;
+        font-size: 150px;
+        color: rgba(255, 255, 255, 0.1);
+        font-family: Georgia, serif;
+        line-height: 1;
+      }
+
+      .vision-quote-text {
+        font-size: 1.5rem;
+        font-style: italic;
+        margin-bottom: 1.5rem;
+        position: relative;
+        z-index: 1;
+      }
+
+      .vision-quote-author {
+        font-weight: 700;
+        font-size: 1.1rem;
+        position: relative;
+        z-index: 1;
+      }
+
+      .vision-quote-position {
+        opacity: 0.8;
+        font-size: 0.9rem;
+        position: relative;
+        z-index: 1;
+      }
+
+      .vision-goals {
+        position: relative;
+        padding: 5rem 0;
+      }
+
+      .vision-goal-card {
+        background-color: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        height: 100%;
+        transition: all 0.3s ease;
+      }
+
+      .vision-goal-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      .vision-goal-header {
+        position: relative;
+        height: 200px;
+        overflow: hidden;
+      }
+
+      .vision-goal-header img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .vision-goal-card:hover .vision-goal-header img {
+        transform: scale(1.1);
+      }
+
+      .vision-goal-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 45, 98, 0.7),
+          rgba(0, 45, 98, 0.9)
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+      }
+
+      .vision-goal-number {
+        font-size: 4rem;
+        font-weight: 800;
+        opacity: 0.5;
+      }
+
+      .vision-goal-body {
+        padding: 2rem;
+      }
+
+      .vision-goal-title {
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: var(--primary-color);
+      }
+
+      @media (max-width: 991.98px) {
+        .vision-hero-title {
+          font-size: 3.5rem;
+        }
+
+        .vision-timeline::before {
+          left: 30px;
+        }
+
+        .vision-timeline-content {
+          width: calc(100% - 60px);
+          margin-left: 60px !important;
+        }
+
+        .vision-timeline-item:nth-child(odd) .vision-timeline-content::before,
+        .vision-timeline-item:nth-child(even) .vision-timeline-content::before {
+          left: -10px;
+          border-width: 10px 10px 10px 0;
+          border-color: transparent white transparent transparent;
+        }
+
+        .vision-timeline-dot {
+          left: 30px;
+        }
+
+        .vision-timeline-item:nth-child(odd) .vision-timeline-year,
+        .vision-timeline-item:nth-child(even) .vision-timeline-year {
+          left: 0;
+          top: -30px;
+          margin-left: 0;
+        }
+      }
+
+      @media (max-width: 767.98px) {
+        .vision-hero-title {
+          font-size: 2.5rem;
+        }
+
+        .vision-hero-subtitle {
+          font-size: 1.25rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Language Selector -->
+    <div class="language-selector">
+      <div class="container">
+        <div class="d-flex justify-content-end py-1">
+          <a href="#" class="lang-link active" data-lang="en">EN</a>
+          <a href="#" class="lang-link" data-lang="ru">RU</a>
+          <a href="#" class="lang-link" data-lang="uz">UZ</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="sticky-top">
+      <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <img
+              src="./img/article-original (1).png"
+              alt="Target International School Logo"
+              height="60"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="student-life.html">Student Life</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="academics.html">Academics</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="vision.html">Our Vision</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="advantages.html">Our Advantages</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="results.html">Results</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="dormitory.html">Dormitory</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Vision Hero Section -->
+    <section class="vision-hero">
+      <div
+        class="vision-hero-bg"
+        style="background-image: url('assets/vision-hero.jpg')"
+      ></div>
+      <div class="container vision-hero-content">
+        <div class="row">
+          <div class="col-lg-8 text-white">
+            <h1 class="vision-hero-title" data-aos="fade-right">
+              <span
+                class="d-block"
+                style="animation: fadeInUp 0.5s ease forwards"
+                >Shaping</span
+              >
+              <span
+                class="d-block"
+                style="animation: fadeInUp 0.5s 0.2s ease forwards; opacity: 0"
+                >Tomorrow's</span
+              >
+              <span
+                class="d-block text-accent"
+                style="animation: fadeInUp 0.5s 0.4s ease forwards; opacity: 0"
+                >Leaders</span
+              >
+            </h1>
+            <p
+              class="vision-hero-subtitle"
+              data-aos="fade-right"
+              data-aos-delay="300"
+            >
+              Our vision is to create a learning environment that nurtures
+              intellectual curiosity, fosters innovation, and develops future
+              leaders who will make a positive impact on the world.
+            </p>
+            <div data-aos="fade-up" data-aos-delay="500">
+              <a href="#vision" class="btn btn-accent btn-lg"
+                >Discover Our Vision</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Animated Elements -->
+      <div
+        class="position-absolute"
+        style="
+          width: 300px;
+          height: 300px;
+          background-color: var(--accent-color);
+          border-radius: 50%;
+          top: -150px;
+          right: -150px;
+          opacity: 0.2;
+          animation: pulse 4s infinite;
+        "
+      ></div>
+      <div
+        class="position-absolute"
+        style="
+          width: 200px;
+          height: 200px;
+          background-color: var(--white);
+          border-radius: 50%;
+          bottom: -100px;
+          left: -100px;
+          opacity: 0.1;
+          animation: pulse 4s 1s infinite;
+        "
+      ></div>
+    </section>
+
+    <!-- Vision & Mission Section -->
+    <section id="vision" class="py-5">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-6" data-aos="fade-right">
+            <div class="vision-card">
+              <div class="vision-card-header">
+                <div class="vision-card-icon">
+                  <i class="fas fa-eye"></i>
+                </div>
+                <h2>Our Vision</h2>
+              </div>
+              <div class="vision-card-body">
+                <p class="vision-card-title">
+                  To be a leading educational institution that prepares students
+                  for global success.
+                </p>
+                <p>
+                  Target International School envisions being recognized
+                  globally as a center of educational excellence that nurtures
+                  intellectual curiosity, fosters innovation, and develops
+                  future leaders who will make a positive impact on the world.
+                </p>
+                <p>
+                  We strive to create an environment where students develop the
+                  knowledge, skills, and values needed to thrive in an
+                  increasingly interconnected and rapidly changing global
+                  landscape.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6" data-aos="fade-left" data-aos-delay="200">
+            <div class="vision-card">
+              <div class="vision-card-header">
+                <div class="vision-card-icon">
+                  <i class="fas fa-bullseye"></i>
+                </div>
+                <h2>Our Mission</h2>
+              </div>
+              <div class="vision-card-body">
+                <p class="vision-card-title">
+                  To provide a comprehensive, high-quality education that
+                  prepares students for successful university admissions and
+                  future careers.
+                </p>
+                <p>
+                  Our mission is to deliver a rigorous academic program with a
+                  focus on Business and IT education, complemented by a rich
+                  array of extracurricular activities that develop the whole
+                  student.
+                </p>
+                <p>
+                  We are committed to creating a supportive learning community
+                  that celebrates diversity, encourages critical thinking, and
+                  instills a lifelong love of learning in our students.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Journey Timeline -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <h2 class="section-title text-center mb-5" data-aos="fade-up">
+          Our Journey
+        </h2>
+
+        <div class="vision-timeline">
+          <div class="vision-timeline-item" data-aos="fade-up">
+            <div class="vision-timeline-content">
+              <div class="vision-timeline-title">Foundation</div>
+              <p>
+                Target International School was established with a vision to
+                provide quality education with a focus on Business and IT.
+                Starting with just 50 students and 10 teachers, we laid the
+                foundation for what would become a leading educational
+                institution in Tashkent.
+              </p>
+            </div>
+            <div class="vision-timeline-dot"></div>
+            <div class="vision-timeline-year">2005</div>
+          </div>
+
+          <div
+            class="vision-timeline-item"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="vision-timeline-content">
+              <div class="vision-timeline-title">Curriculum Development</div>
+              <p>
+                We developed our specialized curriculum focusing on Business and
+                IT education, integrating international standards with local
+                educational requirements. This marked the beginning of our
+                distinctive approach to education.
+              </p>
+            </div>
+            <div class="vision-timeline-dot"></div>
+            <div class="vision-timeline-year">2008</div>
+          </div>
+
+          <div
+            class="vision-timeline-item"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="vision-timeline-content">
+              <div class="vision-timeline-title">Campus Expansion</div>
+              <p>
+                Due to growing demand, we expanded our facilities and opened our
+                second campus in Chilanzar. This expansion allowed us to
+                accommodate more students and enhance our educational offerings.
+              </p>
+            </div>
+            <div class="vision-timeline-dot"></div>
+            <div class="vision-timeline-year">2012</div>
+          </div>
+
+          <div
+            class="vision-timeline-item"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="vision-timeline-content">
+              <div class="vision-timeline-title">International Recognition</div>
+              <p>
+                Target International School received accreditation from
+                international educational organizations, recognizing our
+                commitment to quality education. Our students began gaining
+                admissions to prestigious universities worldwide.
+              </p>
+            </div>
+            <div class="vision-timeline-dot"></div>
+            <div class="vision-timeline-year">2016</div>
+          </div>
+
+          <div
+            class="vision-timeline-item"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div class="vision-timeline-content">
+              <div class="vision-timeline-title">Technology Integration</div>
+              <p>
+                We implemented state-of-the-art technology across all aspects of
+                our educational program, including smart classrooms, computer
+                labs, and digital learning platforms to enhance the learning
+                experience.
+              </p>
+            </div>
+            <div class="vision-timeline-dot"></div>
+            <div class="vision-timeline-year">2019</div>
+          </div>
+
+          <div
+            class="vision-timeline-item"
+            data-aos="fade-up"
+            data-aos-delay="500"
+          >
+            <div class="vision-timeline-content">
+              <div class="vision-timeline-title">Multi-Campus Network</div>
+              <p>
+                Target International School expanded to four campuses across
+                Tashkent, creating a network of educational excellence that
+                serves students from diverse neighborhoods while maintaining our
+                high standards.
+              </p>
+            </div>
+            <div class="vision-timeline-dot"></div>
+            <div class="vision-timeline-year">2023</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Values -->
+    <section class="vision-values">
+      <div class="vision-values-shape vision-values-shape-1"></div>
+      <div class="vision-values-shape vision-values-shape-2"></div>
+
+      <div class="container position-relative">
+        <h2 class="section-title text-center mb-5" data-aos="fade-up">
+          Our Core Values
+        </h2>
+
+        <div class="row g-4">
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="vision-value-card">
+              <div class="vision-value-icon">
+                <i class="fas fa-star"></i>
+              </div>
+              <h3 class="vision-value-title">Excellence</h3>
+              <p>
+                We pursue the highest standards in all aspects of education,
+                challenging ourselves and our students to achieve their full
+                potential.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="vision-value-card">
+              <div class="vision-value-icon">
+                <i class="fas fa-lightbulb"></i>
+              </div>
+              <h3 class="vision-value-title">Innovation</h3>
+              <p>
+                We embrace new ideas, approaches, and technologies that enhance
+                learning and prepare students for a rapidly changing world.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="vision-value-card">
+              <div class="vision-value-icon">
+                <i class="fas fa-balance-scale"></i>
+              </div>
+              <h3 class="vision-value-title">Integrity</h3>
+              <p>
+                We uphold honesty, ethics, and transparency in all our actions,
+                fostering a culture of trust and respect within our community.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div class="vision-value-card">
+              <div class="vision-value-icon">
+                <i class="fas fa-hands-helping"></i>
+              </div>
+              <h3 class="vision-value-title">Respect</h3>
+              <p>
+                We value diversity and treat everyone with dignity and kindness,
+                creating an inclusive environment where all feel welcome and
+                valued.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="500"
+          >
+            <div class="vision-value-card">
+              <div class="vision-value-icon">
+                <i class="fas fa-check-circle"></i>
+              </div>
+              <h3 class="vision-value-title">Responsibility</h3>
+              <p>
+                We encourage accountability for one's actions and decisions,
+                teaching students to be responsible citizens who contribute
+                positively to society.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="600"
+          >
+            <div class="vision-value-card">
+              <div class="vision-value-icon">
+                <i class="fas fa-globe"></i>
+              </div>
+              <h3 class="vision-value-title">Global Citizenship</h3>
+              <p>
+                We foster awareness and appreciation of different cultures and
+                perspectives, preparing students to thrive in an interconnected
+                world.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leadership Quote -->
+    <section class="py-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10" data-aos="fade-up">
+            <div class="vision-quote">
+              <p class="vision-quote-text">
+                "At Target International School, we believe that education is
+                not just about academic achievement, but about developing the
+                whole person. Our vision is to create a learning environment
+                where students discover their passions, develop their talents,
+                and become confident, compassionate leaders who will shape a
+                better future for our world."
+              </p>
+              <div class="vision-quote-author">Bekhzod Jalilov</div>
+              <div class="vision-quote-position">
+                CEO, Target International School
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Strategic Goals -->
+    <section class="vision-goals bg-light">
+      <div class="container">
+        <h2 class="section-title text-center mb-5" data-aos="fade-up">
+          Our Strategic Goals
+        </h2>
+
+        <div class="row g-4">
+          <div
+            class="col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="vision-goal-card">
+              <div class="vision-goal-header">
+                <img
+                  src="./img/students-target.jpg"
+                  alt="Academic Excellence"
+                />
+                <div class="vision-goal-overlay">
+                  <div class="vision-goal-number">01</div>
+                </div>
+              </div>
+              <div class="vision-goal-body">
+                <h3 class="vision-goal-title">Academic Excellence</h3>
+                <p>
+                  Continuously enhance our curriculum and teaching methodologies
+                  to ensure our students receive a world-class education that
+                  prepares them for future success.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="vision-goal-card">
+              <div class="vision-goal-header">
+                <img src="./img/globa-connect.jpg" alt="Global Partnerships" />
+                <div class="vision-goal-overlay">
+                  <div class="vision-goal-number">02</div>
+                </div>
+              </div>
+              <div class="vision-goal-body">
+                <h3 class="vision-goal-title">Global Partnerships</h3>
+                <p>
+                  Establish and strengthen partnerships with leading educational
+                  institutions worldwide to provide our students with
+                  international opportunities and perspectives.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="vision-goal-card">
+              <div class="vision-goal-header">
+                <img src="./img/robo.jpg" alt="Technological Innovation" />
+                <div class="vision-goal-overlay">
+                  <div class="vision-goal-number">03</div>
+                </div>
+              </div>
+              <div class="vision-goal-body">
+                <h3 class="vision-goal-title">Technological Innovation</h3>
+                <p>
+                  Integrate cutting-edge technology into our educational
+                  programs to enhance learning experiences and develop students'
+                  digital literacy and technical skills.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div class="vision-goal-card">
+              <div class="vision-goal-header">
+                <img src="./img/community.png" alt="Community Impact" />
+                <div class="vision-goal-overlay">
+                  <div class="vision-goal-number">04</div>
+                </div>
+              </div>
+              <div class="vision-goal-body">
+                <h3 class="vision-goal-title">Community Impact</h3>
+                <p>
+                  Expand our outreach and service initiatives to make a positive
+                  impact on our local community while instilling a sense of
+                  social responsibility in our students.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Join Our Vision CTA -->
+    <section class="cta-section cta-accent py-5 text-white text-center">
+      <div class="container">
+        <h2 class="mb-4" data-aos="fade-up">Join Us in Shaping the Future</h2>
+        <p class="lead mb-4" data-aos="fade-up" data-aos-delay="100">
+          Be part of our vision to develop the next generation of leaders,
+          innovators, and global citizens.
+        </p>
+        <div
+          class="d-flex justify-content-center gap-3 flex-wrap"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <a href="contact.html" class="btn btn-light btn-lg">Apply Now</a>
+          <a href="about.html" class="btn btn-outline-light btn-lg"
+            >Learn More</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <img
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/photo_2023-05-20_09-53-30.jpg-GCQjI1B1EaGRAwA64nGla6FE3P6aAg.jpeg"
+              alt="Target International School Logo"
+              height="60"
+              class="mb-3"
+            />
+            <p>
+              Target International School provides quality education with a
+              focus on Business and IT, preparing students for successful
+              international university admissions.
+            </p>
+            <div class="social-links mt-3">
+              <a href="#" class="social-link"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="social-link"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-link"
+                ><i class="fab fa-telegram"></i
+              ></a>
+              <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+          <div class="col-md-4 col-lg-2">
+            <h5 class="footer-heading">Quick Links</h5>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="academics.html">Academics</a></li>
+              <li><a href="student-life.html">Student Life</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4 col-lg-2">
+            <h5 class="footer-heading">Programs</h5>
+            <ul class="footer-links">
+              <li><a href="academics.html#it">IT Education</a></li>
+              <li><a href="academics.html#business">Business Studies</a></li>
+              <li><a href="academics.html#ielts">IELTS Preparation</a></li>
+              <li><a href="academics.html#sat">SAT Preparation</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4 col-lg-4">
+            <h5 class="footer-heading">Contact Us</h5>
+            <address class="mb-0">
+              <p>
+                <i class="fas fa-map-marker-alt me-2"></i> 123 Education Street,
+                Tashkent, Uzbekistan
+              </p>
+              <p><i class="fas fa-phone me-2"></i> +998 71 123 4567</p>
+              <p><i class="fas fa-envelope me-2"></i> info@targetschool.uz</p>
+            </address>
+          </div>
+        </div>
+        <hr class="mt-4 mb-3" />
+        <div class="row">
+          <div class="col-md-6">
+            <p class="mb-md-0">
+              &copy; 2023 Target International School. All Rights Reserved.
+            </p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <ul class="footer-bottom-links">
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" aria-label="Back to top">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    <script>
+      // Initialize AOS animation library
+      AOS.init({
+        duration: 800,
+        easing: "ease-in-out",
+        once: true,
+        mirror: false,
+      });
+
+      // Add custom animations for hero section
+      document.addEventListener("DOMContentLoaded", function () {
+        // Custom animation keyframes
+        const style = document.createElement("style");
+        style.textContent = `
+                @keyframes fadeInUp {
+                    from {
+                        opacity: 0;
+                        transform: translateY(20px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+                
+                @keyframes morphShape {
+                    0% {
+                        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+                    }
+                    25% {
+                        border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%;
+                    }
+                    50% {
+                        border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%;
+                    }
+                    75% {
+                        border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%;
+                    }
+                    100% {
+                        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+                    }
+                }
+            `;
+        document.head.appendChild(style);
+      });
+    </script>
+  </body>
+</html>

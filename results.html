@@ -1,0 +1,2538 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Results - Target International School</title>
+    <meta
+      name="description"
+      content="Discover the outstanding academic results and achievements of Target International School students in IELTS, SAT, and university admissions."
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <style>
+      /* Page-specific styles */
+      .results-hero {
+        position: relative;
+        height: 100vh;
+        overflow: hidden;
+        background-color: var(--primary-color);
+      }
+
+      .results-hero-content {
+        position: relative;
+        z-index: 2;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .results-hero-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        opacity: 0.3;
+      }
+
+      .results-hero-title {
+        font-size: 5rem;
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        line-height: 1.1;
+      }
+
+      .results-hero-subtitle {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        max-width: 700px;
+      }
+
+      .floating-numbers {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        z-index: 1;
+      }
+
+      .floating-number {
+        position: absolute;
+        color: rgba(255, 255, 255, 0.1);
+        font-weight: 700;
+        animation: floatNumber 15s linear infinite;
+      }
+
+      @keyframes floatNumber {
+        0% {
+          transform: translateY(100vh) rotate(0deg);
+          opacity: 0;
+        }
+        10% {
+          opacity: 0.1;
+        }
+        90% {
+          opacity: 0.1;
+        }
+        100% {
+          transform: translateY(-100px) rotate(360deg);
+          opacity: 0;
+        }
+      }
+
+      .stats-container {
+        position: relative;
+        padding: 5rem 0;
+        overflow: hidden;
+      }
+
+      .stats-bg-shape {
+        position: absolute;
+        border-radius: 50%;
+        background-color: var(--accent-color);
+        opacity: 0.05;
+        z-index: 0;
+      }
+
+      .shape-1 {
+        width: 500px;
+        height: 500px;
+        top: -250px;
+        right: -250px;
+      }
+
+      .shape-2 {
+        width: 300px;
+        height: 300px;
+        bottom: -150px;
+        left: -150px;
+      }
+
+      .stats-card {
+        position: relative;
+        background-color: white;
+        border-radius: 20px;
+        padding: 2rem;
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+        height: 100%;
+        overflow: hidden;
+        z-index: 1;
+        transition: all 0.5s ease;
+      }
+
+      .stats-card:hover {
+        transform: translateY(-15px);
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+      }
+
+      .stats-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: linear-gradient(
+          90deg,
+          var(--primary-color),
+          var(--accent-color)
+        );
+      }
+
+      .stats-icon {
+        font-size: 3rem;
+        color: var(--primary-color);
+        margin-bottom: 1.5rem;
+        transition: all 0.5s ease;
+      }
+
+      .stats-card:hover .stats-icon {
+        transform: scale(1.2) rotate(10deg);
+        color: var(--accent-color);
+      }
+
+      .stats-number {
+        font-size: 3.5rem;
+        font-weight: 800;
+        color: var(--primary-color);
+        margin-bottom: 0.5rem;
+        background: linear-gradient(
+          45deg,
+          var(--primary-color),
+          var(--accent-color)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .stats-label {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--text-color);
+        margin-bottom: 1rem;
+      }
+
+      .stats-description {
+        color: var(--light-text);
+      }
+
+      .results-section {
+        position: relative;
+        padding: 5rem 0;
+      }
+
+      .results-section:nth-child(even) {
+        background-color: var(--secondary-color);
+      }
+
+      .results-title {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 3rem;
+      }
+
+      .results-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 80px;
+        height: 5px;
+        background: linear-gradient(
+          90deg,
+          var(--primary-color),
+          var(--accent-color)
+        );
+      }
+
+      .results-card {
+        position: relative;
+        background-color: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+        height: 100%;
+        transition: all 0.5s ease;
+        transform-style: preserve-3d;
+        perspective: 1000px;
+      }
+
+      .results-card:hover {
+        transform: rotateY(10deg);
+        box-shadow: -20px 20px 40px rgba(0, 0, 0, 0.2);
+      }
+
+      .results-card-header {
+        position: relative;
+        padding: 2rem;
+        background: linear-gradient(
+          135deg,
+          var(--primary-color) 0%,
+          var(--primary-dark) 100%
+        );
+        color: white;
+      }
+
+      .results-card-header::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.1) 0%,
+          rgba(255, 255, 255, 0) 70%
+        );
+        transform: rotate(30deg);
+      }
+
+      .results-card-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+      }
+
+      .results-card-subtitle {
+        font-size: 1rem;
+        opacity: 0.8;
+      }
+
+      .results-card-body {
+        padding: 2rem;
+      }
+
+      .score-distribution {
+        position: relative;
+        height: 250px;
+        margin-bottom: 1.5rem;
+      }
+
+      .score-bar {
+        position: absolute;
+        bottom: 0;
+        width: 8%;
+        background: linear-gradient(
+          to top,
+          var(--primary-color),
+          var(--accent-color)
+        );
+        border-radius: 5px 5px 0 0;
+        transition: height 1.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .score-bar:hover {
+        filter: brightness(1.1);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      }
+
+      .score-label {
+        position: absolute;
+        bottom: -25px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 0.8rem;
+        color: var(--text-color);
+        font-weight: 600;
+      }
+
+      .score-value {
+        position: absolute;
+        top: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: var(--accent-color);
+        color: white;
+        padding: 0.25rem 0.5rem;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        white-space: nowrap;
+      }
+
+      .score-bar:hover .score-value {
+        opacity: 1;
+      }
+
+      .university-map {
+        position: relative;
+        height: 500px;
+        background-color: var(--secondary-color);
+        border-radius: 20px;
+        overflow: hidden;
+      }
+
+      .map-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background: url("assets/world-map.png") center/contain no-repeat;
+      }
+
+      .university-point {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: var(--accent-color);
+        box-shadow: 0 0 0 5px rgba(255, 0, 0, 0.2);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        animation: pulse 2s infinite;
+      }
+
+      .university-point:hover {
+        transform: scale(1.5);
+        animation: none;
+      }
+
+      .university-tooltip {
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: white;
+        border-radius: 10px;
+        padding: 0.75rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        width: 200px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        pointer-events: none;
+        z-index: 10;
+      }
+
+      .university-point:hover .university-tooltip {
+        opacity: 1;
+        visibility: visible;
+        bottom: 130%;
+      }
+
+      .university-tooltip::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border-width: 8px;
+        border-style: solid;
+        border-color: white transparent transparent transparent;
+      }
+
+      .university-name {
+        font-weight: 700;
+        font-size: 0.9rem;
+        margin-bottom: 0.25rem;
+        color: var(--primary-color);
+      }
+
+      .university-info {
+        font-size: 0.8rem;
+        color: var(--light-text);
+      }
+
+      .achievement-gallery {
+        position: relative;
+        padding: 5rem 0;
+        background-color: var(--secondary-color);
+      }
+
+      .gallery-container {
+        position: relative;
+      }
+
+      .gallery-item {
+        position: relative;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        margin-bottom: 30px;
+        transform-style: preserve-3d;
+        perspective: 1000px;
+        transition: all 0.5s ease;
+      }
+
+      .gallery-item:hover {
+        transform: scale(1.05) rotateY(5deg);
+        box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.2);
+        z-index: 2;
+      }
+
+      .gallery-image {
+        position: relative;
+        height: 250px;
+        overflow: hidden;
+      }
+
+      .gallery-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .gallery-item:hover .gallery-image img {
+        transform: scale(1.1);
+      }
+
+      .gallery-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to top, rgba(0, 45, 98, 0.8), transparent);
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 1.5rem;
+        color: white;
+      }
+
+      .gallery-item:hover .gallery-overlay {
+        opacity: 1;
+      }
+
+      .gallery-title {
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        transform: translateY(20px);
+        opacity: 0;
+        transition: all 0.5s ease;
+      }
+
+      .gallery-description {
+        font-size: 0.9rem;
+        transform: translateY(20px);
+        opacity: 0;
+        transition: all 0.5s ease;
+        transition-delay: 0.1s;
+      }
+
+      .gallery-item:hover .gallery-title,
+      .gallery-item:hover .gallery-description {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      .gallery-badge {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background-color: var(--accent-color);
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
+        transform: translateY(-50px);
+        opacity: 0;
+        transition: all 0.5s ease;
+      }
+
+      .gallery-item:hover .gallery-badge {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      .testimonial-section {
+        position: relative;
+        padding: 5rem 0;
+      }
+
+      .testimonial-card {
+        position: relative;
+        background-color: white;
+        border-radius: 20px;
+        padding: 2rem;
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+        margin-top: 50px;
+        transition: all 0.5s ease;
+      }
+
+      .testimonial-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+      }
+
+      .testimonial-image {
+        position: absolute;
+        top: -50px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 5px solid white;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .testimonial-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .testimonial-content {
+        text-align: center;
+        padding-top: 3rem;
+      }
+
+      .testimonial-text {
+        font-style: italic;
+        margin-bottom: 1.5rem;
+        position: relative;
+      }
+
+      .testimonial-text::before,
+      .testimonial-text::after {
+        content: '"';
+        font-size: 2rem;
+        color: var(--accent-color);
+        position: absolute;
+        opacity: 0.3;
+      }
+
+      .testimonial-text::before {
+        top: -10px;
+        left: -10px;
+      }
+
+      .testimonial-text::after {
+        bottom: -30px;
+        right: -10px;
+      }
+
+      .testimonial-name {
+        font-weight: 700;
+        color: var(--primary-color);
+        margin-bottom: 0.25rem;
+      }
+
+      .testimonial-university {
+        color: var(--accent-color);
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+      }
+
+      .testimonial-year {
+        font-size: 0.9rem;
+        color: var(--light-text);
+      }
+
+      .circular-progress {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        margin: 0 auto 1.5rem;
+      }
+
+      .circular-progress svg {
+        width: 100%;
+        height: 100%;
+        transform: rotate(-90deg);
+      }
+
+      .circular-progress circle {
+        fill: none;
+        stroke-width: 10;
+        stroke-linecap: round;
+        stroke-dasharray: 283;
+        stroke-dashoffset: 283;
+        transition: stroke-dashoffset 2s ease;
+      }
+
+      .circular-progress .bg {
+        stroke: rgba(0, 0, 0, 0.1);
+        stroke-dashoffset: 0;
+      }
+
+      .circular-progress .progress {
+        stroke: var(--accent-color);
+      }
+
+      .circular-progress-value {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--primary-color);
+      }
+
+      .progress-bar-container {
+        height: 30px;
+        background-color: rgba(0, 0, 0, 0.1);
+        border-radius: 15px;
+        overflow: hidden;
+        margin-bottom: 1.5rem;
+      }
+
+      .progress-bar {
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          var(--primary-color),
+          var(--accent-color)
+        );
+        border-radius: 15px;
+        width: 0;
+        transition: width 2s ease;
+      }
+
+      .progress-label {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+      }
+
+      .progress-title {
+        font-weight: 600;
+        color: var(--primary-color);
+      }
+
+      .progress-value {
+        font-weight: 700;
+        color: var(--accent-color);
+      }
+
+      .animated-counter {
+        font-size: 3rem;
+        font-weight: 800;
+        color: var(--primary-color);
+        margin-bottom: 0.5rem;
+      }
+
+      .counter-label {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--text-color);
+      }
+
+      .particle-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 0;
+      }
+
+      .particle {
+        position: absolute;
+        border-radius: 50%;
+        background-color: var(--accent-color);
+        opacity: 0.3;
+        animation: particleFloat 15s linear infinite;
+      }
+
+      @keyframes particleFloat {
+        0% {
+          transform: translateY(100vh) translateX(0);
+          opacity: 0;
+        }
+        10% {
+          opacity: 0.3;
+        }
+        90% {
+          opacity: 0.3;
+        }
+        100% {
+          transform: translateY(-100px) translateX(100px);
+          opacity: 0;
+        }
+      }
+
+      .results-cta {
+        position: relative;
+        padding: 5rem 0;
+        background: linear-gradient(
+          135deg,
+          var(--primary-color) 0%,
+          var(--primary-dark) 100%
+        );
+        color: white;
+        overflow: hidden;
+      }
+
+      .results-cta-shape {
+        position: absolute;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      .results-cta-shape-1 {
+        width: 300px;
+        height: 300px;
+        top: -150px;
+        right: -150px;
+      }
+
+      .results-cta-shape-2 {
+        width: 200px;
+        height: 200px;
+        bottom: -100px;
+        left: -100px;
+      }
+
+      .results-cta-title {
+        font-size: 2.5rem;
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+      }
+
+      .results-cta-text {
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+        max-width: 700px;
+      }
+
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.4);
+        }
+        70% {
+          box-shadow: 0 0 0 10px rgba(255, 0, 0, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+        }
+      }
+
+      /* 3D Flip Card */
+      .flip-card {
+        perspective: 1000px;
+        height: 300px;
+        margin-bottom: 30px;
+      }
+
+      .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+      }
+
+      .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+      }
+
+      .flip-card-front,
+      .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        border-radius: 20px;
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+        padding: 2rem;
+      }
+
+      .flip-card-front {
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .flip-card-back {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color) 0%,
+          var(--primary-dark) 100%
+        );
+        color: white;
+        transform: rotateY(180deg);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .flip-card-icon {
+        font-size: 3rem;
+        color: var(--primary-color);
+        margin-bottom: 1.5rem;
+      }
+
+      .flip-card-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        color: var(--primary-color);
+      }
+
+      .flip-card-back .flip-card-title {
+        color: white;
+      }
+
+      .flip-card-text {
+        text-align: center;
+      }
+
+      /* Glowing effect */
+      .glow-on-hover {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .glow-on-hover::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.3) 0%,
+          rgba(255, 255, 255, 0) 70%
+        );
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        transform: rotate(30deg);
+        pointer-events: none;
+      }
+
+      .glow-on-hover:hover::before {
+        opacity: 1;
+      }
+
+      /* Campus Map Section */
+      .campus-section {
+        padding: 5rem 0;
+        background-color: var(--secondary-color);
+      }
+
+      .campus-card {
+        background-color: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+        height: 100%;
+        transition: all 0.5s ease;
+      }
+
+      .campus-card:hover {
+        transform: translateY(-15px);
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+      }
+
+      .campus-map {
+        width: 100%;
+        height: 250px;
+        border: none;
+      }
+
+      .campus-content {
+        padding: 1.5rem;
+      }
+
+      .campus-title {
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        color: var(--primary-color);
+      }
+
+      .campus-address {
+        color: var(--light-text);
+        margin-bottom: 1rem;
+      }
+
+      .chart-container {
+        position: relative;
+        height: 300px;
+        margin-bottom: 1.5rem;
+      }
+
+      /* Animated background */
+      .animated-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: -1;
+      }
+
+      .animated-bg-shape {
+        position: absolute;
+        border-radius: 50%;
+        opacity: 0.05;
+        animation: floatShape 20s linear infinite;
+      }
+
+      @keyframes floatShape {
+        0% {
+          transform: translate(0, 0) rotate(0deg);
+        }
+        25% {
+          transform: translate(5%, 10%) rotate(90deg);
+        }
+        50% {
+          transform: translate(10%, 5%) rotate(180deg);
+        }
+        75% {
+          transform: translate(5%, 0%) rotate(270deg);
+        }
+        100% {
+          transform: translate(0, 0) rotate(360deg);
+        }
+      }
+
+      /* Confetti animation */
+      .confetti-container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .confetti {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        opacity: 0;
+        animation: confettiFall 5s ease-in-out infinite;
+      }
+
+      @keyframes confettiFall {
+        0% {
+          transform: translateY(-100px) rotate(0deg);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(1000px) rotate(360deg);
+          opacity: 0;
+        }
+      }
+
+      /* Responsive styles */
+      @media (max-width: 991.98px) {
+        .results-hero-title {
+          font-size: 3.5rem;
+        }
+
+        .university-map {
+          height: 400px;
+        }
+      }
+
+      @media (max-width: 767.98px) {
+        .results-hero-title {
+          font-size: 2.5rem;
+        }
+
+        .results-hero-subtitle {
+          font-size: 1.25rem;
+        }
+
+        .stats-number {
+          font-size: 2.5rem;
+        }
+
+        .university-map {
+          height: 300px;
+        }
+
+        .circular-progress {
+          width: 120px;
+          height: 120px;
+        }
+
+        .circular-progress-value {
+          font-size: 1.5rem;
+        }
+
+        .animated-counter {
+          font-size: 2.5rem;
+        }
+
+        .counter-label {
+          font-size: 1rem;
+        }
+
+        .results-cta-title {
+          font-size: 2rem;
+        }
+
+        .results-cta-text {
+          font-size: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Language Selector -->
+    <div class="language-selector">
+      <div class="container">
+        <div class="d-flex justify-content-end py-1">
+          <a href="#" class="lang-link active" data-lang="en">EN</a>
+          <a href="#" class="lang-link" data-lang="ru">RU</a>
+          <a href="#" class="lang-link" data-lang="uz">UZ</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="sticky-top">
+      <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <img
+              src="./img/article-original (1).png"
+              alt="Target International School Logo"
+              height="60"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="student-life.html">Student Life</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="academics.html">Academics</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="vision.html">Our Vision</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="advantages.html">Our Advantages</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="results.html">Results</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="dormitory.html">Dormitory</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Results Hero Section with Confetti Animation -->
+    <section class="results-hero">
+      <div
+        class="results-hero-bg"
+        style="background-image: url('assets/results-hero.jpg')"
+      ></div>
+
+      <!-- Confetti Animation -->
+      <div class="confetti-container" id="confetti-container"></div>
+
+      <!-- Floating Numbers Animation -->
+      <div class="floating-numbers">
+        <div
+          class="floating-number"
+          style="
+            font-size: 3rem;
+            left: 10%;
+            animation-duration: 12s;
+            animation-delay: 0s;
+          "
+        >
+          7.0
+        </div>
+        <div
+          class="floating-number"
+          style="
+            font-size: 4rem;
+            left: 25%;
+            animation-duration: 15s;
+            animation-delay: 2s;
+          "
+        >
+          1350
+        </div>
+        <div
+          class="floating-number"
+          style="
+            font-size: 5rem;
+            left: 40%;
+            animation-duration: 18s;
+            animation-delay: 4s;
+          "
+        >
+          100%
+        </div>
+        <div
+          class="floating-number"
+          style="
+            font-size: 3.5rem;
+            left: 60%;
+            animation-duration: 14s;
+            animation-delay: 1s;
+          "
+        >
+          6.5
+        </div>
+        <div
+          class="floating-number"
+          style="
+            font-size: 4.5rem;
+            left: 75%;
+            animation-duration: 16s;
+            animation-delay: 3s;
+          "
+        >
+          1300
+        </div>
+        <div
+          class="floating-number"
+          style="
+            font-size: 3rem;
+            left: 90%;
+            animation-duration: 13s;
+            animation-delay: 5s;
+          "
+        >
+          8.0
+        </div>
+        <div
+          class="floating-number"
+          style="
+            font-size: 4rem;
+            left: 15%;
+            animation-duration: 17s;
+            animation-delay: 6s;
+          "
+        >
+          1250
+        </div>
+        <div
+          class="floating-number"
+          style="
+            font-size: 5rem;
+            left: 45%;
+            animation-duration: 19s;
+            animation-delay: 7s;
+          "
+        >
+          95%
+        </div>
+        <div
+          class="floating-number"
+          style="
+            font-size: 3.5rem;
+            left: 65%;
+            animation-duration: 14s;
+            animation-delay: 8s;
+          "
+        >
+          7.5
+        </div>
+        <div
+          class="floating-number"
+          style="
+            font-size: 4.5rem;
+            left: 85%;
+            animation-duration: 16s;
+            animation-delay: 9s;
+          "
+        >
+          1400
+        </div>
+      </div>
+
+      <div class="container results-hero-content">
+        <div class="row">
+          <div class="col-lg-8 text-white">
+            <h1 class="results-hero-title" data-aos="fade-right">
+              <span
+                class="d-block"
+                style="animation: fadeInUp 0.5s ease forwards"
+                >Outstanding</span
+              >
+              <span
+                class="d-block"
+                style="animation: fadeInUp 0.5s 0.2s ease forwards; opacity: 0"
+                >Academic</span
+              >
+              <span
+                class="d-block text-accent"
+                style="animation: fadeInUp 0.5s 0.4s ease forwards; opacity: 0"
+                >Results</span
+              >
+            </h1>
+            <p
+              class="results-hero-subtitle"
+              data-aos="fade-right"
+              data-aos-delay="300"
+            >
+              Our students consistently achieve exceptional results in IELTS,
+              SAT, and gain admissions to prestigious universities worldwide.
+            </p>
+            <div data-aos="fade-up" data-aos-delay="500">
+              <a href="#key-stats" class="btn btn-accent btn-lg"
+                >Explore Our Achievements</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Statistics Section -->
+    <section id="key-stats" class="stats-container">
+      <div class="stats-bg-shape shape-1"></div>
+      <div class="stats-bg-shape shape-2"></div>
+
+      <div class="container position-relative">
+        <h2 class="section-title text-center mb-5" data-aos="fade-up">
+          Key Statistics
+        </h2>
+
+        <div class="row g-4">
+          <div
+            class="col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="stats-card glow-on-hover">
+              <div class="stats-icon">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+              <div class="stats-number" id="university-acceptance">100</div>
+              <div class="stats-label">University Acceptance Rate</div>
+              <p class="stats-description">
+                All of our graduates receive offers from universities, with many
+                gaining admission to prestigious institutions worldwide.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="stats-card glow-on-hover">
+              <div class="stats-icon">
+                <i class="fas fa-language"></i>
+              </div>
+              <div class="stats-number" id="ielts-score">7.0</div>
+              <div class="stats-label">Average IELTS Score</div>
+              <p class="stats-description">
+                Our students consistently achieve high IELTS scores, exceeding
+                the requirements of top universities.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="stats-card glow-on-hover">
+              <div class="stats-icon">
+                <i class="fas fa-book"></i>
+              </div>
+              <div class="stats-number" id="sat-score">1300</div>
+              <div class="stats-label">Average SAT Score</div>
+              <p class="stats-description">
+                Our comprehensive SAT preparation program helps students achieve
+                scores in the top percentiles.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div class="stats-card glow-on-hover">
+              <div class="stats-icon">
+                <i class="fas fa-medal"></i>
+              </div>
+              <div class="stats-number" id="scholarship-rate">90</div>
+              <div class="stats-label">Scholarship Recipients (%)</div>
+              <p class="stats-description">
+                The majority of our students receive merit-based scholarships
+                for their university studies.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- IELTS Results Section -->
+    <section class="results-section">
+      <div class="animated-bg">
+        <div
+          class="animated-bg-shape"
+          style="
+            width: 300px;
+            height: 300px;
+            background-color: var(--primary-color);
+            top: -150px;
+            right: -150px;
+            animation-duration: 25s;
+          "
+        ></div>
+        <div
+          class="animated-bg-shape"
+          style="
+            width: 200px;
+            height: 200px;
+            background-color: var(--accent-color);
+            bottom: -100px;
+            left: -100px;
+            animation-duration: 20s;
+            animation-delay: 5s;
+          "
+        ></div>
+      </div>
+
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+            <h2 class="results-title">IELTS Excellence</h2>
+            <p class="lead mb-4">
+              Our students consistently achieve exceptional IELTS scores,
+              opening doors to top universities worldwide.
+            </p>
+            <p>
+              The International English Language Testing System (IELTS) is a
+              crucial requirement for university admissions in English-speaking
+              countries. Our specialized IELTS preparation program, led by
+              experienced instructors, helps students develop the language
+              skills and test strategies needed to excel.
+            </p>
+
+            <div class="mt-5">
+              <div class="progress-label">
+                <span class="progress-title">Overall Score</span>
+                <span class="progress-value">7.0</span>
+              </div>
+              <div class="progress-bar-container">
+                <div class="progress-bar" data-width="70"></div>
+              </div>
+
+              <div class="progress-label">
+                <span class="progress-title">Listening</span>
+                <span class="progress-value">7.2</span>
+              </div>
+              <div class="progress-bar-container">
+                <div class="progress-bar" data-width="72"></div>
+              </div>
+
+              <div class="progress-label">
+                <span class="progress-title">Reading</span>
+                <span class="progress-value">7.1</span>
+              </div>
+              <div class="progress-bar-container">
+                <div class="progress-bar" data-width="71"></div>
+              </div>
+
+              <div class="progress-label">
+                <span class="progress-title">Writing</span>
+                <span class="progress-value">6.8</span>
+              </div>
+              <div class="progress-bar-container">
+                <div class="progress-bar" data-width="68"></div>
+              </div>
+
+              <div class="progress-label">
+                <span class="progress-title">Speaking</span>
+                <span class="progress-value">6.9</span>
+              </div>
+              <div class="progress-bar-container">
+                <div class="progress-bar" data-width="69"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+            <div class="results-card">
+              <div class="results-card-header">
+                <h3 class="results-card-title">IELTS Score Distribution</h3>
+                <p class="results-card-subtitle">Class of 2023</p>
+              </div>
+              <div class="results-card-body">
+                <div class="score-distribution">
+                  <div
+                    class="score-bar"
+                    style="left: 5%; height: 0%"
+                    data-height="30%"
+                  >
+                    <div class="score-label">6.0</div>
+                    <div class="score-value">30%</div>
+                  </div>
+                  <div
+                    class="score-bar"
+                    style="left: 15%; height: 0%"
+                    data-height="45%"
+                  >
+                    <div class="score-label">6.5</div>
+                    <div class="score-value">45%</div>
+                  </div>
+                  <div
+                    class="score-bar"
+                    style="left: 25%; height: 0%"
+                    data-height="47%"
+                  >
+                    <div class="score-label">7.0</div>
+                    <div class="score-value">47%</div>
+                  </div>
+                  <div
+                    class="score-bar"
+                    style="left: 35%; height: 0%"
+                    data-height="20%"
+                  >
+                    <div class="score-label">7.5</div>
+                    <div class="score-value">20%</div>
+                  </div>
+                  <div
+                    class="score-bar"
+                    style="left: 45%; height: 0%"
+                    data-height="8%"
+                  >
+                    <div class="score-label">8.0</div>
+                    <div class="score-value">8%</div>
+                  </div>
+                  <div
+                    class="score-bar"
+                    style="left: 55%; height: 0%"
+                    data-height="1%"
+                  >
+                    <div class="score-label">8.5</div>
+                    <div class="score-value">1%</div>
+                  </div>
+                </div>
+
+                <div class="text-center">
+                  <p class="mb-1"><strong>Highest Score:</strong> 8.5</p>
+                  <p class="mb-1"><strong>Average Score:</strong> 7.0</p>
+                  <p><strong>Students Scoring 6.5+:</strong> 95%</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SAT Results Section -->
+    <section class="results-section">
+      <div class="animated-bg">
+        <div
+          class="animated-bg-shape"
+          style="
+            width: 350px;
+            height: 350px;
+            background-color: var(--accent-color);
+            top: -175px;
+            left: -175px;
+            animation-duration: 30s;
+          "
+        ></div>
+        <div
+          class="animated-bg-shape"
+          style="
+            width: 250px;
+            height: 250px;
+            background-color: var(--primary-color);
+            bottom: -125px;
+            right: -125px;
+            animation-duration: 25s;
+            animation-delay: 3s;
+          "
+        ></div>
+      </div>
+
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 order-lg-2 mb-5 mb-lg-0" data-aos="fade-left">
+            <h2 class="results-title">SAT Success</h2>
+            <p class="lead mb-4">
+              Our students achieve impressive SAT scores, positioning them for
+              admission to top U.S. universities.
+            </p>
+            <p>
+              The Scholastic Assessment Test (SAT) is a standardized test widely
+              used for college admissions in the United States. Our
+              comprehensive SAT preparation program focuses on developing
+              critical thinking, problem-solving, and test-taking strategies
+              that help students maximize their scores.
+            </p>
+
+            <div class="row mt-5">
+              <div
+                class="col-md-6 mb-4"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <div class="circular-progress">
+                  <svg viewBox="0 0 100 100">
+                    <circle class="bg" cx="50" cy="50" r="45"></circle>
+                    <circle
+                      class="progress"
+                      cx="50"
+                      cy="50"
+                      r="45"
+                      data-value="81"
+                    ></circle>
+                  </svg>
+                  <div class="circular-progress-value">1300</div>
+                </div>
+                <div class="text-center">
+                  <h4 class="h5">Average Score</h4>
+                  <p class="small text-muted">Out of 1600 maximum</p>
+                </div>
+              </div>
+              <div
+                class="col-md-6 mb-4"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <div class="circular-progress">
+                  <svg viewBox="0 0 100 100">
+                    <circle class="bg" cx="50" cy="50" r="45"></circle>
+                    <circle
+                      class="progress"
+                      cx="50"
+                      cy="50"
+                      r="45"
+                      data-value="94"
+                    ></circle>
+                  </svg>
+                  <div class="circular-progress-value">1500</div>
+                </div>
+                <div class="text-center">
+                  <h4 class="h5">Highest Score</h4>
+                  <p class="small text-muted">Class of 2023</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-6 order-lg-1"
+            data-aos="fade-right"
+            data-aos-delay="200"
+          >
+            <div class="results-card">
+              <div class="results-card-header">
+                <h3 class="results-card-title">SAT Score Distribution</h3>
+                <p class="results-card-subtitle">Class of 2023</p>
+              </div>
+              <div class="results-card-body">
+                <div class="score-distribution">
+                  <div
+                    class="score-bar"
+                    style="left: 5%; height: 0%"
+                    data-height="9%"
+                  >
+                    <div class="score-label">1100</div>
+                    <div class="score-value">9%</div>
+                  </div>
+                  <div
+                    class="score-bar"
+                    style="left: 15%; height: 0%"
+                    data-height="30%"
+                  >
+                    <div class="score-label">1250</div>
+                    <div class="score-value">30%</div>
+                  </div>
+                  <div
+                    class="score-bar"
+                    style="left: 25%; height: 0%"
+                    data-height="35%"
+                  >
+                    <div class="score-label">1300</div>
+                    <div class="score-value">35%</div>
+                  </div>
+                  <div
+                    class="score-bar"
+                    style="left: 35%; height: 0%"
+                    data-height="20%"
+                  >
+                    <div class="score-label">1350</div>
+                    <div class="score-value">20%</div>
+                  </div>
+                  <div
+                    class="score-bar"
+                    style="left: 45%; height: 0%"
+                    data-height="11%"
+                  >
+                    <div class="score-label">1400</div>
+                    <div class="score-value">11%</div>
+                  </div>
+                  <div
+                    class="score-bar"
+                    style="left: 55%; height: 0%"
+                    data-height="7%"
+                  >
+                    <div class="score-label">1450</div>
+                    <div class="score-value">7%</div>
+                  </div>
+                  <div
+                    class="score-bar"
+                    style="left: 65%; height: 0%"
+                    data-height="2%"
+                  >
+                    <div class="score-label">1500</div>
+                    <div class="score-value">2%</div>
+                  </div>
+                </div>
+
+                <div class="text-center">
+                  <p class="mb-1"><strong>Average Math:</strong> 650</p>
+                  <p class="mb-1">
+                    <strong>Average Evidence-Based Reading and Writing:</strong>
+                    650
+                  </p>
+                  <p><strong>Students Scoring 1300+:</strong> 75%</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Charts Section -->
+    <section class="results-section">
+      <div class="container">
+        <h2 class="results-title text-center mb-5" data-aos="fade-up">
+          Performance Trends
+        </h2>
+
+        <div class="row g-4">
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="results-card">
+              <div class="results-card-header">
+                <h3 class="results-card-title">IELTS Score Trends</h3>
+                <p class="results-card-subtitle">Last 5 Years</p>
+              </div>
+              <div class="results-card-body">
+                <div class="chart-container">
+                  <canvas id="ieltsChart"></canvas>
+                </div>
+                <div class="text-center">
+                  <p>
+                    <strong
+                      >Consistent improvement in average IELTS scores over the
+                      past 5 years</strong
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="results-card">
+              <div class="results-card-header">
+                <h3 class="results-card-title">SAT Score Trends</h3>
+                <p class="results-card-subtitle">Last 5 Years</p>
+              </div>
+              <div class="results-card-body">
+                <div class="chart-container">
+                  <canvas id="satChart"></canvas>
+                </div>
+                <div class="text-center">
+                  <p>
+                    <strong
+                      >Steady growth in average SAT scores year over
+                      year</strong
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- University Admissions Section -->
+    <section class="results-section">
+      <div class="container">
+        <h2 class="results-title text-center mb-5" data-aos="fade-up">
+          University Admissions
+        </h2>
+        <p
+          class="text-center mb-5 lead"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          Our graduates gain admission to prestigious universities around the
+          world.
+        </p>
+
+        <div class="row g-4 mb-5">
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <div class="flip-card-icon">
+                    <i class="fas fa-globe-americas"></i>
+                  </div>
+                  <h3 class="flip-card-title">USA & Canada</h3>
+                  <p class="flip-card-text">Hover to see universities</p>
+                </div>
+                <div class="flip-card-back">
+                  <h3 class="flip-card-title">Top Admissions</h3>
+                  <ul class="text-start">
+                    <li>Harvard University</li>
+                    <li>Stanford University</li>
+                    <li>MIT</li>
+                    <li>University of Toronto</li>
+                    <li>University of British Columbia</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <div class="flip-card-icon">
+                    <i class="fas fa-globe-europe"></i>
+                  </div>
+                  <h3 class="flip-card-title">Europe</h3>
+                  <p class="flip-card-text">Hover to see universities</p>
+                </div>
+                <div class="flip-card-back">
+                  <h3 class="flip-card-title">Top Admissions</h3>
+                  <ul class="text-start">
+                    <li>University of Oxford</li>
+                    <li>University of Cambridge</li>
+                    <li>ETH Zurich</li>
+                    <li>Imperial College London</li>
+                    <li>Sorbonne University</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <div class="flip-card-icon">
+                    <i class="fas fa-globe-asia"></i>
+                  </div>
+                  <h3 class="flip-card-title">Asia & Australia</h3>
+                  <p class="flip-card-text">Hover to see universities</p>
+                </div>
+                <div class="flip-card-back">
+                  <h3 class="flip-card-title">Top Admissions</h3>
+                  <ul class="text-start">
+                    <li>National University of Singapore</li>
+                    <li>University of Tokyo</li>
+                    <li>Tsinghua University</li>
+                    <li>University of Melbourne</li>
+                    <li>University of Sydney</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="text-center">
+              <div class="animated-counter" id="top-universities">25</div>
+              <div class="counter-label">Top 100 Universities</div>
+            </div>
+          </div>
+
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="text-center">
+              <div class="animated-counter" id="countries">15</div>
+              <div class="counter-label">Countries</div>
+            </div>
+          </div>
+
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="text-center">
+              <div class="animated-counter" id="scholarship-amount">$30000000</div>
+              <div class="counter-label">Scholarship Funds</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Achievement Gallery -->
+    <section class="achievement-gallery">
+      <div class="particle-container">
+        <!-- Particles will be added via JavaScript -->
+      </div>
+
+      <div class="container position-relative">
+        <h2 class="section-title text-center mb-5" data-aos="fade-up">
+          Achievement Gallery
+        </h2>
+        <p
+          class="text-center mb-5 lead"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          Our students excel in various competitions, olympiads, and events.
+        </p>
+
+        <div class="row g-4">
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="gallery-item">
+              <div class="gallery-image">
+                <img src="./img/award1.jpg" alt="International Math Olympiad" />
+              </div>
+              <div class="gallery-badge">Gold Medal</div>
+              <div class="gallery-overlay">
+                <h3 class="gallery-title">International World scholars competiotionh3>
+                <p class="gallery-description">
+                  Our students won gold and silver medals at the International
+                  World scholars event, getting a first place overall from debate section.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="gallery-item">
+              <div class="gallery-image">
+                <img
+                  src="./img/award2.jpg"
+                  alt="National IT Competition"
+                />
+              </div>
+             
+              <div class="gallery-overlay">
+                <h3 class="gallery-title">International Olympiad in Mental Arithmetic ASIAN CUP - 2025</h3>
+                <p class="gallery-description">
+                  6xGold, 8xsilver, 7xbronze.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="gallery-item">
+              <div class="gallery-image">
+                <img
+                  src="./img/award.jpg"
+                  alt="International Science Fair"
+                />
+              </div>
+              <div class="gallery-badge">Grand Prize</div>
+              <div class="gallery-overlay">
+                <h3 class="gallery-title">National Robotics Competition</h3>
+                <p class="gallery-description">
+                  Three of out  students won the competition by getting gold, silver and bronze medals.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div class="gallery-item">
+              <div class="gallery-image">
+                <img
+                  src="./img/award4.jpg"
+                  alt="Business Plan Competition"
+                />
+              </div>
+              <div class="gallery-badge">Winner 2nd place</div>
+              <div class="gallery-overlay">
+                <h3 class="gallery-title">President Tech Award</h3>
+                <p class="gallery-description">
+                  Our students had an privelege to pitch their project Speaklish in the national President Tech Award competition, where they won 2nd place.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="500"
+          >
+            <div class="gallery-item">
+              <div class="gallery-image">
+                <img
+                  src="./img/award5.jpg"
+                  alt="Robotics Championship"
+                />
+              </div>
+              <div class="gallery-badge">Silve Recipients</div>
+              <div class="gallery-overlay">
+                <h3 class="gallery-title">Asian mental arithmetics olimpiad</h3>
+                <p class="gallery-description">
+                  Two of out student won silver medals at the Asian mental arithmetics olimpiad, showcasing their exceptional calculation skills.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="600"
+          >
+            <div class="gallery-item">
+              <div class="gallery-image">
+                <img src="./img/award6.jpg" alt="Debate Tournament" />
+              </div>
+              <div class="gallery-badge">Gold</div>
+              <div class="gallery-overlay">
+                <h3 class="gallery-title">Wamas 2024<h3>
+                <p class="gallery-description">
+                  Our student Zulayho received a gold medal at the Wamas 2024, winning the trophy among 500+ particants from 24 countries.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Student Testimonials -->
+    <section class="testimonial-section">
+      <div class="container">
+        <h2 class="section-title text-center mb-5" data-aos="fade-up">
+          Success Stories
+        </h2>
+
+        <div class="row g-4">
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="testimonial-card">
+              <div class="testimonial-image">
+                <img src="./img/abdulaziz-muxamadjonov.jpg" alt="Student" />
+              </div>
+              <div class="testimonial-content">
+                <p class="testimonial-text">
+                                   "I came to Target International School in September with a dream of studying. With the guidence of my teachers like Mr.Ulugbek, Mr.Diyor and Mr.Husniddin I was able to achieve SAT score of 1450 and get into Gettysburg college with full-tuition scholarship, and got approved from USA Visa."
+                  
+                </p>
+                <h4 class="testimonial-name">Abdulaziz Maxamadjonov</h4>
+                <p class="testimonial-university">Gettysburg college</p>
+                <p class="testimonial-year">Class of 2029</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="testimonial-card">
+              <div class="testimonial-image">
+                <img src="./img/diyorbek-namozov.jpg" alt="Student" />
+              </div>
+              <div class="testimonial-content">
+                <p class="testimonial-text">
+                  "I studied at Target International school since 9th grade, this school has significantly changed my mindset and the teachers guided me till I got into my dream university - University of Toronto with a full-ride scholarship of Lester B which is given to only 27 students wolrdwide.
+
+                </p>
+                <h4 class="testimonial-name">Namozov Diyorbek</h4>
+                <p class="testimonial-university">
+                 UToronto, Lester B Pearson Scholarship
+                </p>
+                <p class="testimonial-year">Class of 2028</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="testimonial-card">
+              <div class="testimonial-image">
+                <img src="./img/najmitdinn.png" alt="Student" />
+              </div>
+              <div class="testimonial-content">
+                <p class="testimonial-text">
+                                "           I joined Target in 9th grade, and since then, I have achieved a score of 7.5 in IELTS with the help of Mr. Zokirjon. Also, with the help of SAT teachers, I achieved an SAT score of 1520, which helped me to win my deserved scholarship to the University of Toronto."
+                  
+                </p>
+                <h4 class="testimonial-name">Najmitdin Muxitdinov</h4>
+                <p class="testimonial-university">University of Toronto</p>
+                <p class="testimonial-year">Class of 2029</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Campuses Section -->
+    <section class="campus-section">
+      <div class="container">
+        <h2 class="section-title text-center mb-5" data-aos="fade-up">
+          Our Campuses
+        </h2>
+        <p
+          class="text-center mb-5 lead"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          Visit one of our four modern campuses across Tashkent.
+        </p>
+
+        <div class="row g-4">
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="campus-card">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2355.2260131166263!2d69.18525232163758!3d41.328351066035786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae890b7212a1eb%3A0x475749465760baa3!2sTARGET%20INTERNATIONAL%20SCHOOL%20%7C%20BIZNES%20VA%20IT!5e0!3m2!1sru!2s!4v1745658235181!5m2!1sru!2s"
+                class="campus-map"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+              <div class="campus-content">
+                <h3 class="campus-title">Istirohat Branch</h3>
+                <p class="campus-address">
+                  Istirohat Street, Tashkent, Uzbekistan
+                </p>
+                <p><i class="fas fa-phone me-2"></i> +998 71 123 4567</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="campus-card">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2996.0001499767804!2d69.22076147646266!3d41.33061009951443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b4059735375%3A0xdefcb355fd65c665!2sTarget%20International%20School!5e0!3m2!1sru!2s!4v1745658300059!5m2!1sru!2s"
+                class="campus-map"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+              <div class="campus-content">
+                <h3 class="campus-title">Tinchlik Branch</h3>
+                <p class="campus-address">
+                  Tinchlik Street, Tashkent, Uzbekistan
+                </p>
+                <p><i class="fas fa-phone me-2"></i> +998 71 123 4568</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="campus-card">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1199.6126887651933!2d69.26630870525555!3d41.37683751869026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDHCsDIyJzM3LjUiTiA2OcKwMTYnMDMuNSJF!5e0!3m2!1sru!2s!4v1745658675292!5m2!1sru!2s"
+                class="campus-map"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+              <div class="campus-content">
+                <h3 class="campus-title">Yunusabad Branch</h3>
+                <p class="campus-address">
+                  Yunusabad District, Tashkent, Uzbekistan
+                </p>
+                <p><i class="fas fa-phone me-2"></i> +998 71 123 4569</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="campus-card">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d401.3170457269338!2d69.21407648440065!3d41.21502121307807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae61c623494167%3A0x3526fbd1e97ed388!2sTarget%20Xususiy%20Maktabi!5e0!3m2!1sru!2s!4v1745658733762!5m2!1sru!2s"
+                class="campus-map"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+              <div class="campus-content">
+                <h3 class="campus-title">Sergeli Branch</h3>
+                <p class="campus-address">
+                  Sergeli District, Tashkent, Uzbekistan
+                </p>
+                <p><i class="fas fa-phone me-2"></i> +998 71 123 4570</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="results-cta">
+      <div class="results-cta-shape results-cta-shape-1"></div>
+      <div class="results-cta-shape results-cta-shape-2"></div>
+
+      <div class="container position-relative">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center">
+            <h2 class="results-cta-title" data-aos="fade-up">
+              Join Our Success Story
+            </h2>
+            <p
+              class="results-cta-text mx-auto"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              Become part of our community of achievers and prepare for a
+              successful future at Target International School.
+            </p>
+            <div data-aos="fade-up" data-aos-delay="200">
+              <a href="contact.html" class="btn btn-light btn-lg me-3"
+                >Apply Now</a
+              >
+              <a href="about.html" class="btn btn-outline-light btn-lg"
+                >Learn More</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <img
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/photo_2023-05-20_09-53-30.jpg-GCQjI1B1EaGRAwA64nGla6FE3P6aAg.jpeg"
+              alt="Target International School Logo"
+              height="60"
+              class="mb-3"
+            />
+            <p>
+              Target International School provides quality education with a
+              focus on Business and IT, preparing students for successful
+              international university admissions.
+            </p>
+            <div class="social-links mt-3">
+              <a href="#" class="social-link"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="social-link"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-link"
+                ><i class="fab fa-telegram"></i
+              ></a>
+              <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+          <div class="col-md-4 col-lg-2">
+            <h5 class="footer-heading">Quick Links</h5>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="academics.html">Academics</a></li>
+              <li><a href="student-life.html">Student Life</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4 col-lg-2">
+            <h5 class="footer-heading">Programs</h5>
+            <ul class="footer-links">
+              <li><a href="academics.html#it">IT Education</a></li>
+              <li><a href="academics.html#business">Business Studies</a></li>
+              <li><a href="academics.html#ielts">IELTS Preparation</a></li>
+              <li><a href="academics.html#sat">SAT Preparation</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4 col-lg-4">
+            <h5 class="footer-heading">Contact Us</h5>
+            <address class="mb-0">
+              <p>
+                <i class="fas fa-map-marker-alt me-2"></i> 123 Education Street,
+                Tashkent, Uzbekistan
+              </p>
+              <p><i class="fas fa-phone me-2"></i> +998 71 123 4567</p>
+              <p><i class="fas fa-envelope me-2"></i> info@targetschool.uz</p>
+            </address>
+          </div>
+        </div>
+        <hr class="mt-4 mb-3" />
+        <div class="row">
+          <div class="col-md-6">
+            <p class="mb-md-0">
+              &copy; 2023 Target International School. All Rights Reserved.
+            </p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <ul class="footer-bottom-links">
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" aria-label="Back to top">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    <script>
+      // Initialize AOS animation library
+      AOS.init({
+        duration: 800,
+        easing: "ease-in-out",
+        once: true,
+        mirror: false,
+      });
+
+      // Add custom animations for hero section
+      document.addEventListener("DOMContentLoaded", function () {
+        // Custom animation keyframes
+        const style = document.createElement("style");
+        style.textContent = `
+                @keyframes fadeInUp {
+                    from {
+                        opacity: 0;
+                        transform: translateY(20px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+            `;
+        document.head.appendChild(style);
+
+        // Animate score bars
+        setTimeout(() => {
+          document.querySelectorAll(".score-bar").forEach((bar) => {
+            const height = bar.getAttribute("data-height");
+            bar.style.height = height;
+          });
+        }, 500);
+
+        // Animate progress bars
+        setTimeout(() => {
+          document.querySelectorAll(".progress-bar").forEach((bar) => {
+            const width = bar.getAttribute("data-width");
+            bar.style.width = width + "%";
+          });
+        }, 500);
+
+        // Animate circular progress
+        setTimeout(() => {
+          document
+            .querySelectorAll(".circular-progress .progress")
+            .forEach((circle) => {
+              const value = circle.getAttribute("data-value");
+              const circumference = 283;
+              const offset = circumference - (value / 100) * circumference;
+              circle.style.strokeDashoffset = offset;
+            });
+        }, 500);
+
+        // Animated counters
+        const animateCounter = (element, target, prefix = "", suffix = "") => {
+          let current = 0;
+          const increment = target / 100;
+          const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+              current = target;
+              clearInterval(timer);
+            }
+            element.textContent = prefix + Math.floor(current) + suffix;
+          }, 20);
+        };
+
+        // Create intersection observer for counters
+        const counterObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const element = entry.target;
+                let target = parseFloat(element.textContent);
+                let prefix = "";
+                let suffix = "";
+
+                if (element.textContent.includes("$")) {
+                  prefix = "$";
+                  target = parseFloat(element.textContent.replace("$", ""));
+                }
+
+                if (element.textContent.includes("M")) {
+                  suffix = "M";
+                  target = parseFloat(element.textContent.replace("M", ""));
+                }
+
+                animateCounter(element, target, prefix, suffix);
+                counterObserver.unobserve(element);
+              }
+            });
+          },
+          { threshold: 0.5 }
+        );
+
+        // Observe all counter elements
+        document.querySelectorAll(".animated-counter").forEach((counter) => {
+          counterObserver.observe(counter);
+        });
+
+        // Create particles for achievement gallery
+        const particleContainer = document.querySelector(".particle-container");
+        for (let i = 0; i < 20; i++) {
+          const particle = document.createElement("div");
+          particle.classList.add("particle");
+          particle.style.width = Math.random() * 20 + 5 + "px";
+          particle.style.height = particle.style.width;
+          particle.style.left = Math.random() * 100 + "%";
+          particle.style.animationDuration = Math.random() * 10 + 10 + "s";
+          particle.style.animationDelay = Math.random() * 5 + "s";
+          particleContainer.appendChild(particle);
+        }
+
+        // Create confetti animation
+        const confettiContainer = document.getElementById("confetti-container");
+        const confettiColors = ["#ff0000", "#002d62", "#ffffff"];
+
+        for (let i = 0; i < 100; i++) {
+          const confetti = document.createElement("div");
+          confetti.classList.add("confetti");
+          confetti.style.left = Math.random() * 100 + "%";
+          confetti.style.backgroundColor =
+            confettiColors[Math.floor(Math.random() * confettiColors.length)];
+          confetti.style.width = Math.random() * 10 + 5 + "px";
+          confetti.style.height = Math.random() * 10 + 5 + "px";
+          confetti.style.animationDuration = Math.random() * 3 + 2 + "s";
+          confetti.style.animationDelay = Math.random() * 5 + "s";
+          confettiContainer.appendChild(confetti);
+        }
+
+        // Initialize charts
+        const ieltsCtx = document.getElementById("ieltsChart").getContext("2d");
+        const ieltsChart = new Chart(ieltsCtx, {
+          type: "line",
+          data: {
+            labels: ["2019", "2020", "2021", "2022", "2023"],
+            datasets: [
+              {
+                label: "Average IELTS Score",
+                data: [6.5, 6.7, 6.8, 6.9, 7.0],
+                backgroundColor: "rgba(0, 45, 98, 0.2)",
+                borderColor: "rgba(0, 45, 98, 1)",
+                borderWidth: 3,
+                tension: 0.4,
+                fill: true,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: {
+                position: "top",
+              },
+            },
+            scales: {
+              y: {
+                min: 6,
+                max: 7.5,
+                ticks: {
+                  stepSize: 0.5,
+                },
+              },
+            },
+            animation: {
+              duration: 2000,
+              easing: "easeOutQuart",
+            },
+          },
+        });
+
+        const satCtx = document.getElementById("satChart").getContext("2d");
+        const satChart = new Chart(satCtx, {
+          type: "line",
+          data: {
+            labels: ["2019", "2020", "2021", "2022", "2023"],
+            datasets: [
+              {
+                label: "Average SAT Score",
+                data: [1220, 1250, 1270, 1290, 1300],
+                backgroundColor: "rgba(255, 0, 0, 0.2)",
+                borderColor: "rgba(255, 0, 0, 1)",
+                borderWidth: 3,
+                tension: 0.4,
+                fill: true,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: {
+                position: "top",
+              },
+            },
+            scales: {
+              y: {
+                min: 1200,
+                max: 1350,
+                ticks: {
+                  stepSize: 50,
+                },
+              },
+            },
+            animation: {
+              duration: 2000,
+              easing: "easeOutQuart",
+            },
+          },
+        });
+      });
+    </script>
+  </body>
+</html>

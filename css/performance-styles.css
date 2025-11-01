@@ -1,0 +1,115 @@
+/* 
+* Target International School Website
+* Performance optimizations and smooth animations
+*/
+
+/* Page transitions */
+body {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+body.page-transition-out {
+  opacity: 0;
+}
+
+body.page-transition-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Optimize images and backgrounds */
+.lazy-background {
+  background-image: none;
+  background-color: #f0f0f0; /* Placeholder color */
+}
+
+/* Optimize animations */
+.animate-fade-in,
+.animate-slide-left,
+.animate-slide-right,
+.animate-slide-up {
+  will-change: opacity, transform;
+}
+
+/* Optimize rendering performance */
+.navbar,
+.carousel-item,
+.program-card,
+.stats-container,
+.campus-card,
+.footer {
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+/* Reduce layout shifts */
+.carousel-item img,
+.banner-image img,
+.campus-image img,
+.news-card .card-img-top {
+  aspect-ratio: 16 / 9;
+}
+
+/* Smoother hover transitions */
+.program-card:hover,
+.news-card:hover,
+.campus-card:hover,
+.contact-info-card:hover,
+.social-link:hover,
+.btn:hover {
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animate-fade-in,
+  .animate-slide-left,
+  .animate-slide-right,
+  .animate-slide-up {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Optimize for mobile devices */
+@media (max-width: 767.98px) {
+  /* Reduce animation complexity on mobile */
+  .animate-slide-left,
+  .animate-slide-right {
+    animation: fadeIn 0.5s ease forwards;
+  }
+
+  /* Optimize image sizes for mobile */
+  .carousel-item {
+    height: auto;
+    min-height: 300px;
+  }
+
+  /* Improve touch targets for mobile */
+  .nav-link,
+  .btn,
+  .social-link,
+  .footer-links a {
+    padding: 0.75rem;
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
