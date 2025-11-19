@@ -35,7 +35,8 @@ The **Target International School Website** is a fully functional platform built
 | Layer | Technology |
 |-------|-------------|
 | Frontend | HTML, CSS, JavaScript, some JS libraries, Bootsrap |
-| Backend | React components |
+| Backend | React components, Next.js, React.js|
 | Database | MongoDB *(or MySQL, etc.)* |
 | Deployment | Vercel / Render / GitHub Pages |
+
 
