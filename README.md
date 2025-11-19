@@ -17,7 +17,7 @@
 ## ✨ Overview  
 The **Target International School Website** is a fully functional platform built to manage and showcase all aspects of the school’s digital presence — from student results to dormitory info. It’s designed with modern UI principles, smooth animations, and a scalable backend architecture.
 
---
+---
 
 ## 🧩 Core Features  
 - 🎓 **Multi-page design** — Home, About, Academics, Dormitory, Results, Advantages, Contact  
@@ -38,3 +38,4 @@ The **Target International School Website** is a fully functional platform built
 | Backend | React components |
 | Database | MongoDB *(or MySQL, etc.)* |
 | Deployment | Vercel / Render / GitHub Pages |
+
