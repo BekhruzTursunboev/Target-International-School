@@ -9,7 +9,7 @@
 
 ---
 
-## 🌐 Live Demo  
+## 🌐 Live Demo
 🔗 [target-international-school.vercel.app]( &nbsp; | &nbsp; 🧠 [GitHub Repository]([https://github.com/yourusername/school-website](https://github.com/BekhruzTursunboev/Target-International-School/tree/main))
 
 ---
@@ -38,6 +38,7 @@ The **Target International School Website** is a fully functional platform built
 | Backend | React components, Next.js, React.js|
 | Database | MongoDB *(or MySQL, etc.)* |
 | Deployment | Vercel / Render / GitHub Pages |
+
 
 
 
